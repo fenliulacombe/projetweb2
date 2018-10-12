@@ -73,6 +73,7 @@ CREATE TABLE utilisateur(
         situation_pro_ut     Varchar (50) NOT NULL ,
         apropos_ut           Varchar (250) NOT NULL ,
         neq_ut               Varchar (50) NOT NULL ,
+        photo_ut             Longblob NOT NULL ,
         id_role              Int NOT NULL ,
         id_secteur           Int ,
         id_type_este         Int ,
