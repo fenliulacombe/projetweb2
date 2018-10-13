@@ -25,7 +25,7 @@ abstract class Controller
     {
         if (!isset($_SESSION['id']))
         {
-            header('Location: '.ROOT_MNGT);
+            header('Location: '. ROOT_MNGT);
         }
     }
 }
