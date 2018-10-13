@@ -23,9 +23,9 @@ abstract class Controller
 
     protected function checkLogin()
     {
-        if (!isset($_SESSION['is_logged_in']))
+        if (!isset($_SESSION['id']))
         {
-            header('Location: '.ROOT_MNGT);
+            header('Location: '. ROOT_MNGT);
         }
     }
 }
