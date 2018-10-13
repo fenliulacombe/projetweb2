@@ -20,7 +20,7 @@ abstract class Controller
         $view = 'views/'.strtolower(get_class($this)).'/'.$this->action.'.php';
         require('views/main.php');
     }
-
+// test 3
     protected function checkLogin()
     {
         if (!isset($_SESSION['id']))
