@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+/*HELVETICA NEUE*/
+@font-face {
+	font-family: Helvetica-Neue-light;
+    src: url(../fonts/Helvetica-Neue/HelveticaNeueLTPro-Lt.otf);
+}
+@font-face {
+    font-family: Helvetica-Neue-Medium;
+    src: url(../fonts/Helvetica-Neue/HelveticaNeueLTPro-Md.otf);
+}
+@font-face {
+	font-family: Helvetica-Neue-Bold;
+    src: url(../fonts/Helvetica-Neue/HelveticaNeueLTPro-Bd.otf);
+}
+@font-face {
+	font-family: Helvetica-Neue-Bold-Cond;
+    src: url(../fonts/Helvetica-Neue/HelveticaNeueLTPro-BdCn.otf);
+}
+
+/*GARAMOND*/
+@font-face {
+	font-family: Garamond-regular;
+    src: url(../fonts/Garamond/AGaramondPro-Regular.otf);
+}
+@font-face {
+	font-family: Garamond-bold;
+    src: url(../fonts/Garamond/AGaramondPro-Bold.otf);
+}
+
+
+
+
