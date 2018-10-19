@@ -9,6 +9,14 @@ class ContractModel extends Model{
             return $rows;
     }
 
+    public function getLastContracts(){
+        $this->query('SELECT *,COUNT(id_prj_soum) AS nombre_soum FROM projet
+            LEFT JOIN `soumissioner` ON `projet`.`id_prj` = `soumissioner`.`id_prj_soum`
+                GROUP BY id_prj_soum LIMIT 3');
+            $rows = $this-> resultSet();
+            return $rows;
+    }
+
      /*afficher un contrat par l'id reçu*/
      public function getContract(){
         $this->query('SELECT *,COUNT(id_prj_soum) AS nombre_soum FROM projet

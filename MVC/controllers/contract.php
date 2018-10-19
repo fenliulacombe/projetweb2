@@ -7,7 +7,7 @@ class Contract extends Controller{
 
     protected function add(){
         $viewmodel = new ContractModel();
-        $this->returnView(array('viewmodel'=>$viewmodel->addContracts()),true);
+        $this->returnView(array('viewmodel'=>$viewmodel->addContract()),true);
     }
 
     protected function delete(){

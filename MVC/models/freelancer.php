@@ -25,18 +25,30 @@ class FreelancerModel extends Model{
  
      }
 
+     /*afficher les prestataire par filtre*/
+    public function getFreelancersFiltre(){      
+
+        $this->query('SELECT *,COUNT(`id_ut`) FROM utilisateur 
+        LEFT JOIN `evaluer` ON `utilisateur`.`id_ut` = `evaluer`.`id_evaluer_eval`
+        INNER JOIN `secteur` ON `utilisateur`.`id_secteur_ut` = `secteur`.`id_secteur`
+        INNER JOIN `ville` ON `utilisateur`.`id_ville_ut` = `ville`.`id_ville` 
+        GROUP BY `id_ut`');
+        $rows =  $this->resultSet();
+        return $rows;
+     }
+
     /*supprimer prestataire*/
     public function deleteFreelancer($id){
         
     }
 
-     /*afficher tous les prestataire*/
-     public function addFreelancer(){
+    /*afficher tous les prestataire*/
+    public function addFreelancer(){
         return array(''=>'');
     }
 
-     /*supprimer prestataire*/
-     public function updateFreelancer($id){
+    /*supprimer prestataire*/
+    public function updateFreelancer($id){
         return array(''=>'');
     }
     

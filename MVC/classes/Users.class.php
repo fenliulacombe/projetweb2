@@ -5,36 +5,36 @@
 class Users {
 
    
-    private $nom_ut = NULL;
-    private $prenom_ut = NULL;
-    private $nom_entreprise_ut = NULL;
-    private $numero_entreprise_ut = NULL;
-    private $adresse_ut = NULL;
-    private $telephone_ut = NULL;
-    private $courriel_ut = NULL;
-    private $site_web_ut = NULL;
-    private $lien_facebook_ut = NULL;
-    private $lien_linkedin_ut = NULL;
-    private $validation_ut = NULL;
-    private $suspension_ut = NULL;
-    private $mdp_ut = NULL;
-    private $competence_ut = NULL;
-    private $taux_horaire_ut = NULL;
-    private $annee_experience_ut = NULL;
-    private $disponibilite_ut = NULL;
-    private $situation_pro_ut = NULL;
-    private $apropos_ut = NULL;
-    private $neq_ut = NULL;
-    private $photo_ut = NULL;
-    private $id_role_ut = NULL;
-    private $id_secteur_ut = NULL;
-    private $id_type_etse_ut = NULL;
-    private $id_ville_ut = NULL;
+    private $nom_ut = '';
+    private $prenom_ut = '';
+    private $nom_entreprise_ut = '';
+    private $numero_entreprise_ut = '';
+    private $adresse_ut = '';
+    private $telephone_ut = '';
+    private $courriel_ut = '';
+    private $site_web_ut = '';
+    private $lien_facebook_ut = '';
+    private $lien_linkedin_ut = '';
+    private $validation_ut = '';
+    private $suspension_ut = '';
+    private $mdp_ut = '';
+    private $competence_ut = '';
+    private $taux_horaire_ut = '';
+    private $annee_experience_ut = '';
+    private $disponibilite_ut = '';
+    private $situation_pro_ut = '';
+    private $apropos_ut = '';
+    private $neq_ut = '';
+    private $photo_ut = '';
+    private $id_role_ut = '';
+    private $id_secteur_ut = '';
+    private $id_type_etse_ut = '';
+    private $id_ville_ut = '';
     private $erreur = array();
     /*
      * Le constructeur de 
      */
-    public function __construct($nom_ut , $prenom_ut=null, $nom_entreprise_ut=null, $numero_entreprise_ut=null, $adresse_ut=null, $telephone_ut=null, $courriel_ut=null, $site_web_ut=null, $lien_facebook_ut=null, $lien_linkedin_ut=null, $validation_ut=null, $suspension_ut=null, $mdp_ut=null, $competence_ut=null, $taux_horaire_ut=null, $annee_experience_ut=null, $disponibilite_ut=null, $situation_pro_ut=null, $apropos_ut=null, $neq_ut=null, $photo_ut=null, $id_role_ut=null, $id_secteur_ut=null, $id_type_etse_ut=null, $id_ville_ut=null) {
+    public function __construct($nom_ut , $prenom_ut='', $nom_entreprise_ut='', $numero_entreprise_ut='', $adresse_ut='', $telephone_ut='', $courriel_ut='', $site_web_ut='', $lien_facebook_ut='', $lien_linkedin_ut='', $validation_ut='', $suspension_ut='', $mdp_ut='', $competence_ut='', $taux_horaire_ut='', $annee_experience_ut='', $disponibilite_ut='', $situation_pro_ut='', $apropos_ut='', $neq_ut='', $photo_ut='', $id_role_ut='', $id_secteur_ut='', $id_type_etse_ut='', $id_ville_ut='') {
        // $this->setId($id);
          $this->setNomUtilisateur($nom_ut);
          $this->setPrenomUtilisateur($prenom_ut);
@@ -154,7 +154,7 @@ class Users {
      *
      * @return boolean
      */    
-    public function setNomUtilisateur($nom_ut = null) {
+    public function setNomUtilisateur($nom_ut = '') {
 
         $this->nom_ut= $nom_ut;
     }
@@ -164,7 +164,7 @@ class Users {
      *
      * @return boolean
      */    
-    public function setPrenomUtilisateur($prenom_ut = null) {
+    public function setPrenomUtilisateur($prenom_ut = '') {
 
        $this->prenom_ut= $prenom_ut;
 
@@ -175,7 +175,7 @@ class Users {
      *
      * @return boolean
      */    
-    public function setNomEntrepriseUtilisateur($nom_entreprise_ut = null) {
+    public function setNomEntrepriseUtilisateur($nom_entreprise_ut = '') {
 
         $this->nom_entreprise_ut= $nom_entreprise_ut;
 
@@ -186,7 +186,7 @@ class Users {
      *
      * @return boolean
      */    
-    public function setNumeroEntrepriseUtilisateur($numero_entreprise_ut = null) {
+    public function setNumeroEntrepriseUtilisateur($numero_entreprise_ut = '') {
 
         $this->numero_entreprise_ut= $numero_entreprise_ut;
     }
@@ -196,7 +196,7 @@ class Users {
      *
      * @return boolean
      */    
-    public function setAdresseUtilisateur($adresse_ut = null) {
+    public function setAdresseUtilisateur($adresse_ut = '') {
 
         $this->adresse_ut = $adresse_ut;
 
@@ -206,7 +206,7 @@ class Users {
      *
      * @return boolean
      */    
-    public function setTelephoneUtilisateur($telephone_ut = null) {
+    public function setTelephoneUtilisateur($telephone_ut = '') {
 
         $this->telephone_ut = $telephone_ut;
     }
@@ -216,7 +216,7 @@ class Users {
      *
      * @return boolean
      */    
-    public function setCourrielUtilisateur($courriel_ut = null) {
+    public function setCourrielUtilisateur($courriel_ut = '') {
 
         $this->courriel_ut = $courriel_ut;
 
@@ -227,7 +227,7 @@ class Users {
      *
      * @return boolean
      */    
-    public function setSiteWebUtilisateur($site_web_ut = null) {
+    public function setSiteWebUtilisateur($site_web_ut = '') {
 
         $this->site_web_ut = $site_web_ut;
 
@@ -238,7 +238,7 @@ class Users {
      *
      * @return boolean
      */    
-    public function setLienFacebookUtilisateur($lien_facebook_ut = null) {
+    public function setLienFacebookUtilisateur($lien_facebook_ut = '') {
 
        $this->lien_facebook_ut = $lien_facebook_ut;
 
@@ -250,7 +250,7 @@ class Users {
      *
      * @return boolean
      */    
-    public function setLienLinkedinUtilisateur($lien_linkedin_ut = null) {
+    public function setLienLinkedinUtilisateur($lien_linkedin_ut = '') {
 
        $this->lien_linkedin_ut = $lien_linkedin_ut;
 
@@ -261,7 +261,7 @@ class Users {
      *
      * @return boolean
      */    
-    public function setValidationUtilisateur($validation_ut = null) {
+    public function setValidationUtilisateur($validation_ut = '') {
 
        $this->validation_ut = $validation_ut;
 
@@ -272,7 +272,7 @@ class Users {
      *
      * @return boolean
      */    
-    public function setSuspensionUtilisateur($suspension_ut = null) {
+    public function setSuspensionUtilisateur($suspension_ut = '') {
 
        $this->suspension_ut = $suspension_ut;
 
@@ -283,7 +283,7 @@ class Users {
      *
      * @return boolean
      */    
-    public function setMdpUtilisateur($mdp_ut = null) {
+    public function setMdpUtilisateur($mdp_ut = '') {
 
        $this->mdp_ut = $mdp_ut;
 
@@ -294,7 +294,7 @@ class Users {
      *
      * @return boolean
      */    
-    public function setCompetenceUtilisateur($competence_ut = null) {
+    public function setCompetenceUtilisateur($competence_ut = '') {
 
        $this->competence_ut = $competence_ut;
 
@@ -305,7 +305,7 @@ class Users {
      *
      * @return boolean
      */    
-    public function setTauxHoraireUtilisateur($taux_horaire_ut = null) {
+    public function setTauxHoraireUtilisateur($taux_horaire_ut = '') {
 
        $this->taux_horaire_ut = $taux_horaire_ut;
 
@@ -316,7 +316,7 @@ class Users {
      *
      * @return boolean
      */    
-    public function setAnneeExperienceUtilisateur($annee_experience_ut = null) {
+    public function setAnneeExperienceUtilisateur($annee_experience_ut = '') {
 
        $this->annee_experience_ut = $annee_experience_ut;
 
@@ -327,7 +327,7 @@ class Users {
      *
      * @return boolean
      */    
-    public function setDisponibiliteUtilisateur($disponibilite_ut = null) {
+    public function setDisponibiliteUtilisateur($disponibilite_ut = '') {
 
        $this->disponibilite_ut = $disponibilite_ut;
 
@@ -338,7 +338,7 @@ class Users {
      *
      * @return boolean
      */    
-    public function setSituationProUtilisateur($situation_pro_ut = null) {
+    public function setSituationProUtilisateur($situation_pro_ut = '') {
 
        $this->situation_pro_ut = $situation_pro_ut;
 
@@ -349,7 +349,7 @@ class Users {
      *
      * @return boolean
      */    
-    public function setAproposUtilisateur($apropos_ut = null) {
+    public function setAproposUtilisateur($apropos_ut = '') {
 
        $this->apropos_ut = $apropos_ut;
 
@@ -360,7 +360,7 @@ class Users {
      *
      * @return boolean
      */    
-    public function setNeqUtilisateur($neq_ut = null) {
+    public function setNeqUtilisateur($neq_ut = '') {
 
        $this->neq_ut = $neq_ut;
 
@@ -371,7 +371,7 @@ class Users {
      *
      * @return boolean
      */    
-    public function setPhotoUtilisateur($photo_ut = null) {
+    public function setPhotoUtilisateur($photo_ut = '') {
 
        $this->photo_ut = $photo_ut;
 
@@ -382,7 +382,7 @@ class Users {
      *
      * @return boolean
      */    
-    public function setIdRoleUtilisateur($id_role_ut = null) {
+    public function setIdRoleUtilisateur($id_role_ut = '') {
 
        $this->id_role_ut = $id_role_ut;
 
@@ -393,7 +393,7 @@ class Users {
      *
      * @return boolean
      */    
-    public function setIdSecteurUtilisateur($id_secteur_ut = null) {
+    public function setIdSecteurUtilisateur($id_secteur_ut = '') {
 
        $this->id_secteur_ut = $id_secteur_ut;
 
@@ -404,7 +404,7 @@ class Users {
      *
      * @return boolean
      */    
-    public function setIdTypeEtseUtilisateur($id_type_etse_ut = null) {
+    public function setIdTypeEtseUtilisateur($id_type_etse_ut = '') {
 
        $this->id_type_etse_ut = $id_type_etse_ut;
 
@@ -415,7 +415,7 @@ class Users {
      *
      * @return boolean
      */    
-    public function setIdVilleUtilisateur($id_ville_ut = null) {
+    public function setIdVilleUtilisateur($id_ville_ut = '') {
 
        $this->id_ville_ut = $id_ville_ut;
 

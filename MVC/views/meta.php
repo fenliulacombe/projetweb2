@@ -22,3 +22,4 @@
 <link href="<?= ROOT_URL ?>assets/css/style.css" rel="stylesheet" type="text/css">
 <link href="<?= ROOT_URL ?>assets/css/fonts.css" rel="stylesheet" type="text/css">
 <link href="<?= ROOT_URL ?>assets/css/medias-sociaux.css" rel="stylesheet" type="text/css">
+
