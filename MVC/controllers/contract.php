@@ -2,12 +2,12 @@
 class Contract extends Controller{
     protected function index(){
         $viewmodel = new ContractModel();
-        $this->returnView($viewmodel->index(),true);
+        $this->returnView(array('viewmodel'=>$viewmodel->getContracts()),true);
     }
 
     protected function add(){
         $viewmodel = new ContractModel();
-        $this->returnView($viewmodel->add(),true);
+        $this->returnView(array('viewmodel'=>$viewmodel->addContracts()),true);
     }
 
     protected function delete(){
@@ -18,6 +18,6 @@ class Contract extends Controller{
 
     protected function update(){
         $viewmodel = new ContractModel();
-        $this->returnView($viewmodel->update(),true); 
+        $this->returnView(array('viewmodel'=>$viewmodel->updateContracts()),true); 
     }
 }

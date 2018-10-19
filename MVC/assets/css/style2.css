@@ -1,5 +1,5 @@
 /*!
- * MY STYLE
+ * MY STYLE IMANE
  * Copyright 2018
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
@@ -16,7 +16,9 @@
 /* Styling h1 and links
 ––––––––––––––––––––––––––––––––– */
 
-
+.nav li:last-child {
+    border-right: 0;
+}
 
 .starrating > input {display: none;}  /* Remove radio buttons */
 
@@ -34,8 +36,252 @@
 }
 
 .starrating > input:checked ~ label
-{ color: #ffca08 ; } /* Set yellow color when star checked */
+{ color: #efc500 ; } /* Set yellow color when star checked */
 
 .starrating > input:hover ~ label
-{ color: #ffca08 ;  } /* Set yellow color when star hover */
+{ color: #efc500 ;  } /* Set yellow color when star hover */
+
+
+
+/* Styling page pigiste liste
+––––––––––––––––––––––––––––––––– */
+#pigiste h3 {
+    font-size: 1.8em;
+    padding: 20px 0;
+}
+
+#pigiste h5 {
+    font-size: 1em;
+    margin-bottom: 3px;
+    color: #36c1d2;
+}
+
+#pigiste h6 {
+    font-size: 0.8em;
+    color: #000;
+}
+
+#pigiste .card {
+    width: 20%;
+    margin: 0 28px;
+    position:relative;
+    text-align: center;
+    line-height: 18px;
+    font-size: 0.9em;
+}
+
+#pigiste .image {
+    position: relative;
+}
+
+#pigiste .overlay {
+    
+}
+
+#pigiste .image:hover > .overlay{
+    width:100%;
+    height:100%;
+    top: 0;
+    position:absolute;
+    background:radial-gradient(#fff, #36c1d2);
+    opacity:0.2;
+    /*transition-duration: 3s;*/
+    cursor: pointer;
+}
+
+#pigiste .ville {
+    float: left;
+}
+
+#pigiste .rate {
+    float: right;
+}
+
+#pigiste .rate .fa-star {
+    color: #efc500;
+}
+
+#pigiste .taux {
+    font-size: 1.5em;
+    padding-top: 14px;
+    display: block;
+}
+
+
+#content-pigiste .card {
+    display: inline-block;
+    width: 21.4%;
+    margin: 10px 13px !important;
+    position: relative;
+    text-align: center;
+    line-height: 18px;
+    font-size: 0.9em;
+}
+
+#content-pigiste .fa-star {
+    color: #999 !important;
+}
+
+#content-pigiste .ville, #content-pigiste .rate {
+    font-size: 0.8rem;
+}
+
+#content-pigiste .taux {
+    font-size: 1.2rem;
+}
+
+#content-pigiste {
+    margin-top: 70px;
+}
+
+#content-pigiste nav {
+    margin-top: 20px;
+}
+
+#content-pigiste nav li {
+    box-shadow: 2px 2px 4px #E3E3E3;
+}
+
+.page-item.active .page-link {
+    background-color: #36c1d2;
+    border-color: #36c1d2;
+}
+
+.page-link {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+/* Styling Filtrer par
+––––––––––––––––––––––––––––––––– */
+#pigiste .filtrer {
+    background-color: #e1e1e1;
+    padding: 20px;
+    margin: 10px;
+    background-color: #36c1d2;
+    color: #fff;
+}
+
+#pigiste .btn-warning {
+    color: #fff;
+    background-color: #efc500;
+    border-color: #efc500;
+}
+#pigiste .btn-warning:hover {
+    background-color: #f0ad4e;
+}
+
+
+/* Styling Recherche
+––––––––––––––––––––––––––––––––– */
+#recherche_pigiste {
+    margin: 60px 0;
+}
+
+#recherche_pigiste h2 {
+    font-size: 1.5rem;
+}
+
+#recherche_pigiste .form-banniere {
+    max-width: none;
+    box-shadow: 2px 2px 4px #E3E3E3;
+}
+
+
+/* Styling Page detail_prestataire
+––––––––––––––––––––––––––––––––– */
+#detail {
+    margin-top: 50px;
+}
+
+#detail .card {
+    background-color: #F7F7F7;
+    padding: 20px 20px 0 20px;
+    /*color: #000;*/
+    font-size: 0.9rem;
+    line-height: 35px;
+}
+
+#detail .detail {
+    border-left: 1px solid #36c1d2;
+    padding-left: 20px;
+    margin: 40px 0;
+}
+
+#detail .fas, #detail .far {
+    color: #36c1d2;
+    width: 30px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+#detail .best-rate {
+    margin-top: 40px;
+    background-color: #efc500;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 0;
+    width: 80%;
+}
+
+#detail .best-rate .fas {
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+#detail h4 {
+    color: #36c1d2;
+}
+
+#detail .dispo .fas {
+    color: #69AF22;
+    font-size: .6rem;
+    text-align: left;
+    width: inherit;
+}
+
+#vote-msg .card {
+    padding: 20px;
+    margin: 40px 0;
+}
+
+
+#evaluations {
+    margin-top: 60px;
+    border: 1px solid #eceeef;
+    padding: 20px;
+}
+
+#evaluations h5 {
+    height: 40px;
+}
+
+#evaluations tbody {
+    border: 1px solid #eceeef;
+    margin-bottom: 20px;
+    display: block;
+}
+
+#evaluations .name {
+    text-align: right;
+    font-weight: bold;
+}
+
+#evaluations .fas {
+    width: inherit;
+    color: #efc500;
+}
+
+#detail .btn-warning {
+    background-color: #efc500;
+    border-color: #efc500;
+}
+
+#detail .btn-warning:hover {
+    background-color: #f0ad4e;
+}
+
+
 

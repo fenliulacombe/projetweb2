@@ -4,8 +4,9 @@ abstract class Model{
     protected $stmt;
 
     public function __construct(){
-        //$this->dbh = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME, DB_USER, DB_PASS);
-        $this->dbh = null;
+        $this->dbh = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME, DB_USER, DB_PASS);
+        $this->dbh->query('SET NAMES UTF8');
+   
     }
 
     public function query($query)
@@ -48,6 +49,12 @@ abstract class Model{
     public function lastInsertId()
     {
         return $this->dbh->lastInsertId();
+    }
+
+    public function single()
+    {
+        $this->execute();
+        return $this->stmt->fetch(PDO::FETCH_ASSOC);
     }
 }   
 

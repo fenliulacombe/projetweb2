@@ -1,11 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
-    <?php include 'views/meta.php'; ?>
-    <title>Projet Web 2</title>
+<?php include 'views/meta.php'; ?> 
 </head>
 <body>
-    
+
     <!--Partie LOGO/MENU--> 
     <?php include 'views/header.php'; ?>
 

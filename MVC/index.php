@@ -4,6 +4,8 @@
    require ('classes/Main.php');
    require ('classes/Controller.php');
    require ('classes/Model.php');
+   require ('classes/Users.class.php');
+   require ('classes/Contracts.class.php');
 
    require ('controllers/home.php');
    require ('controllers/contract.php');

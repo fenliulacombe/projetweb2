@@ -1,27 +1,70 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Rigister Provider</h3>
-  </div>
-  <div class="panel-body">
-    <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
-        <div class="form-group">
-            <lable>Name</label>
-            <input type="text" name="name" class="form-control" />
+<h3>Inscription fournisseur</h3>
+    <div class="row">
+        <div class="col-sm-4">
+        <form>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Nom d’utilisateur *</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Courriel professionnel *</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Mot de passe *</label>
+            <input type="password" class="form-control" id="exampleFormControlInput1">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Confirmer le mot de passe</label>
+            <input type="password" class="form-control" id="exampleFormControlInput1">
+          </div>
         </div>
-
-        <div class="form-group">
-            <lable>Password</label>
-            <input type="text" name="password" class="form-control" />
+        <div class="col-sm-8">
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Nom *</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Prenom *</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Adresse *</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Ville *</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Nom de votre entreprise *</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Numéro de téléphone </label>
+            <input type="text" class="form-control" id="exampleFormControlInput1">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Numéro d’entreprise du Québec (NEQ)</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Site web (URL)</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">LinkedIn</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1">
+          </div>
+         <div class="form-group">
+            <label for="exampleFormControlInput1">Facebook</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1">
+          </div>
+          <button type="submit" class="btn btn-primary">Soumettre</button>
+        </form>
         </div>
-
-        <div class="form-group">
-            <lable>Email</label>
-            <input type="text" name="email" class="form-control" />
-        </div>
-
-        <input class="btn btn-primary" name="submit" type="submit" value="submit" />
-
-        <a class="btn btn-danger" href="<?php echo ROOT_URL; ?>">Cancel</a>
-    </form>
-  </div>
-</div>
+    </div>

@@ -30,25 +30,25 @@
     <div class="row">
         <!--Cette partie doit etre dans une boucle pour afficher les blocs-->
         <div class="card" style="width:260px">
-          <img class="card-img-top" src="img_avatar1.png" alt="Card image">
+          <img class="card-img-top" src="<?= ROOT_URL ?>assets/images/portait1.jpg" alt="Card image">
           <div class="card-body">
             <h5 class="card-title">Designers/Artistes</h5>
           </div>
         </div>
         <div class="card" style="width:260px">
-          <img class="card-img-top" src="img_avatar1.png" alt="Card image">
+          <img class="card-img-top" src="<?= ROOT_URL ?>assets/images/portait1.jpg" alt="Card image">
           <div class="card-body">
             <h5 class="card-title">Programmeurs</h5>
           </div>
         </div>
         <div class="card" style="width:260px">
-          <img class="card-img-top" src="img_avatar1.png" alt="Card image">
+          <img class="card-img-top" src="<?= ROOT_URL ?>assets/images/portait1.jpg" alt="Card image">
           <div class="card-body">
             <h5 class="card-title">Redacteurs/Traducteurs</h5>
           </div>
         </div>
         <div class="card" style="width:260px">
-          <img class="card-img-top" src="img_avatar1.png" alt="Card image">
+          <img class="card-img-top" src="<?= ROOT_URL ?>assets/images/portait1.jpg" alt="Card image">
           <div class="card-body">
             <h5 class="card-title">Photographes</h5>
           </div>

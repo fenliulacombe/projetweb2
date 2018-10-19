@@ -3,10 +3,10 @@
 define("DB_HOST","localhost");
 define("DB_USER","root");
 define("DB_PASS","");
-define("DB_NAME","myblog");
+define("DB_NAME","projetweb2");
 
 //define URL
 define("ROOT_PATH","/");
-define("ROOT_URL","http://127.0.0.1/projetweb2/")
+define("ROOT_URL","http://127.0.0.1/MVC/")
 
 ?>

@@ -3,7 +3,7 @@ class Database{
     private $host = 'localhost';
     private $user = 'root';
     private $pass = '';
-    private $dbname ='myblog';
+    private $dbname ='projetweb2';
     
     private $dbh;
     private $error;

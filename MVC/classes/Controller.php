@@ -13,6 +13,7 @@ abstract class Controller{
     }
 
     protected function returnView($viewmodel, $fullview){
+        extract($viewmodel);
         $view = 'views/'.strtolower(get_class($this)).'/'.$this->action. '.php';
         if($fullview)
         {
