@@ -61,7 +61,7 @@
                 <?php if ($value['etat_soum'] == 0) { ?>
                 <td style="text-align:right">État du contrat : <span class="contrat-ouvert">OUVERT</span></td>
                 <?php } elseif ($value['etat_soum'] == 1) { ?>
-                <td style="text-align:right">État du contrat : <span class="contrat-ferme">Fermé</span></td>
+                <td style="text-align:right">État du contrat : <span class="contrat-ferme">FERME</span></td>
                 <?php } ?> 
             </tr>
           </tbody>

@@ -5,20 +5,20 @@
 class Contracts {
 
    
-    private $titre_prj = NULL;
-    private $type_prj = NULL;
-    private $description_prj = NULL;
-    private $lieu_realisation_prj = NULL;
-    private $budget_indicatif_prj = NULL;
-    private $date_debut_prj = NULL;
-    private $date_fin_prj = NULL;
-    private $id_ut_prj = NULL;
-    private $id_secteur_prj = NULL;
+    private $titre_prj = '';
+    private $type_prj = '';
+    private $description_prj = '';
+    private $lieu_realisation_prj = '';
+    private $budget_indicatif_prj = '';
+    private $date_debut_prj = '';
+    private $date_fin_prj = '';
+    private $id_ut_prj = '';
+    private $id_secteur_prj = '';
     private $erreur = array();
     /*
      * Le constructeur de 
      */
-    public function __construct($titre_prj , $type_prj=null, $description_prj=null, $lieu_realisation_prj=null, $budget_indicatif_prj=null, $date_debut_prj=null, $date_fin_prj=null, $id_ut_prj=null, $id_secteur_prj=null) {
+    public function __construct($titre_prj , $type_prj='', $description_prj='', $lieu_realisation_prj='', $budget_indicatif_prj='', $date_debut_prj='', $date_fin_prj='', $id_ut_prj='', $id_secteur_prj='') {
        // $this->setId($id);
          $this->setTitreContract($titre_prj);
          $this->setTypeContract($type_prj);
@@ -32,9 +32,7 @@ class Contracts {
         
 
     }
-     public function __destruct() {
 
-     }
 
     public function getTitreContract(){
         return $this->titre_prj;
@@ -76,7 +74,7 @@ class Contracts {
      *
      * @return boolean
      */    
-    public function setTitreContract($titre_prj = null) {
+    public function setTitreContract($titre_prj = '') {
 
         $this->titre_prj= $titre_prj;
     }
@@ -86,7 +84,7 @@ class Contracts {
      *
      * @return boolean
      */    
-    public function setTypeContract($type_prj = null) {
+    public function setTypeContract($type_prj = '') {
 
        $this->type_prj= $type_prj;
 
@@ -97,7 +95,7 @@ class Contracts {
      *
      * @return boolean
      */    
-    public function setDescriptionContract($description_prj = null) {
+    public function setDescriptionContract($description_prj = '') {
 
         $this->description_prj= $description_prj;
 
@@ -108,7 +106,7 @@ class Contracts {
      *
      * @return boolean
      */    
-    public function setLieuRealisationContract($lieu_realisation_prj = null) {
+    public function setLieuRealisationContract($lieu_realisation_prj = '') {
 
         $this->lieu_realisation_prj= $lieu_realisation_prj;
     }
@@ -118,7 +116,7 @@ class Contracts {
      *
      * @return boolean
      */    
-    public function setBudgetIndicatifContract($budget_indicatif_prj = null) {
+    public function setBudgetIndicatifContract($budget_indicatif_prj = '') {
 
         $this->budget_indicatif_prj = $budget_indicatif_prj;
 
@@ -128,7 +126,7 @@ class Contracts {
      *
      * @return boolean
      */    
-    public function setDateDebutContract($date_debut_prj = null) {
+    public function setDateDebutContract($date_debut_prj = '') {
 
         $this->date_debut_prj = $date_debut_prj;
     }
@@ -138,7 +136,7 @@ class Contracts {
      *
      * @return boolean
      */    
-    public function setDateFinContract($date_fin_prj = null) {
+    public function setDateFinContract($date_fin_prj = '') {
 
         $this->date_fin_prj = $date_fin_prj;
 
@@ -149,7 +147,7 @@ class Contracts {
      *
      * @return boolean
      */    
-    public function setIdUtContract($id_ut_prj = null) {
+    public function setIdUtContract($id_ut_prj = '') {
 
         $this->id_ut_prj = $id_ut_prj;
 
@@ -160,7 +158,7 @@ class Contracts {
      *
      * @return boolean
      */    
-    public function setIdSecteurContract($id_secteur_prj = null) {
+    public function setIdSecteurContract($id_secteur_prj = '') {
 
        $this->id_secteur_prj = $id_secteur_prj;
 

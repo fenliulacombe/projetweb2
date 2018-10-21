@@ -63,9 +63,6 @@ class Users {
          $this->setIdVilleUtilisateur($id_ville_ut);
 
     }
-     public function __destruct() {
-
-     }
 
     public function getNomUtilisateur(){
         return $this->nom_ut;

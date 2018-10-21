@@ -87,17 +87,16 @@
       <h4>Filtrer par :</h4>
         <form>
           <div class="form-group">
-            <label for="exampleFormControlSelect1">Ville</label>
-
-              <select class="form-control" id="exampleFormControlSelect1">
+            <label for="nom_ville">Ville</label>
+              <select class="form-control" name="nom_ville">
               <?php foreach ($cities as $key => $city) {?>
                 <option value=<?= $city['id_ville'] ?>><?= $city['nom_ville'] ?></option>
               <?php } ?>
               </select>
           </div>
           <div class="form-group">
-            <label for="exampleFormControlSelect1">Taux horaire</label>
-              <select class="form-control" id="exampleFormControlSelect2">
+            <label for="taux_horaire_ut">Taux horaire</label>
+              <select class="form-control" name="taux_horaire_ut">
                 <option>20$-29$</option>
                 <option>30$-39$</option>
                 <option>40$-49$</option>
@@ -105,8 +104,8 @@
               </select>
           </div>
           <div class="form-group">
-            <label for="exampleFormControlSelect1">Secteurs d’activités</label>
-              <select multiple class="form-control" id="exampleFormControlSelect3">
+            <label for="nom_secteur">Secteurs d’activités</label>
+              <select multiple class="form-control" name="nom_secteur">
               <?php foreach ($sectors as $key => $sector) {?>
                 <option value=<?= $sector['id_secteur'] ?>><?= $sector['nom_secteur']?></option>
               <?php } ?>

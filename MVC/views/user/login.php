@@ -17,17 +17,17 @@
           <div class="row">
               <form>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Courriel ou nom d'utilisateur</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                  <label for="courriel_ut">Courriel ou nom d'utilisateur</label>
+                  <input type="email" class="form-control" name="courriel_ut" id="courriel_ut" aria-describedby="emailHelp" placeholder="Enter email">
                   <small id="emailHelp" class="form-text text-muted">Nous ne partagons pas votre courriel à d'autre.</small>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Mot de passe</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <label for="mdp_ut">Mot de passe</label>
+                  <input type="password" class="form-control" name="mdp_ut" id="mdp_ut" placeholder="Password">
                 </div>
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Se souvenir de moi</label>
+                  <input type="checkbox" class="form-check-input" name="sesouvenir" id="sesouvenir">
+                  <label class="form-check-label" for="sesouvenir">Se souvenir de moi</label>
                 </div>
                 <button type="submit" class="btn btn-turquoise">Connexion</button>
               </form>

@@ -36,7 +36,7 @@ class UserModel extends Model{
             $this->bind(':id_secteur_ut', $user->id_secteur_ut);
             $this->bind(':id_type_etse_ut', $user->id_type_etse_ut);
             $this->bind(':id_ville_ut', $user->id_ville_ut);
-            $this->execute();
+            $res = $this->execute();
 
             // verify 
             if($this->lastInsertId()){
@@ -85,4 +85,23 @@ class UserModel extends Model{
     public function registerProvider(){
         return;
     }
+
+    public function getCities(){
+        
+        $this->query('SELECT * FROM `ville`');
+        $rows =  $this->resultSet();
+        return $rows;
+     }
+ 
+     public function GetSectors(){
+        $this->query('SELECT * FROM `secteur`');
+        $rows =  $this->resultSet();
+        return $rows;   
+     }
+ 
+     public function GetCompanytypes(){
+         $this->query('SELECT * FROM `type_entreprise`');
+         $rows =  $this->resultSet();
+         return $rows;   
+      }
 }

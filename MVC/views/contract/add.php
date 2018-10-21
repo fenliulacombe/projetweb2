@@ -4,44 +4,44 @@
         <div class="col">
         <form>
           <div class="form-group">
-            <label for="exampleFormControlInput1">Titre du projet *</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1">
+            <label for="titre_prj">Titre du projet *</label>
+            <input type="text" name="titre_prj" class="form-control" id="titre_prj">
           </div>
           <div class="form-group">
-            <label for="exampleFormControlInput1">Type du projet *</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1">
+            <label for="type_prj">Type du projet *</label>
+            <input type="text" name="type_prj" class="form-control" id="type_prj">
           </div>
           <div class="form-group">
-            <label for="exampleFormControlInput1">Secteur *</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
+            <label for="secteur_prj">Secteur *</label>
+            <select class="form-control" id="id_secteur_prj" name="secteur_prj">
+              <?php foreach ($sectors as $key => $sector) {?>
+                <option value=<?= $sector['id_secteur'] ?>><?= $sector['nom_secteur']?></option>
+              <?php } ?>
             </select>
           </div>
           <div class="form-group">
-            <label for="exampleFormControlTextarea1">Description *</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <label for="description_prj">Description *</label>
+            <textarea class="form-control" id="description_prj" name="description_prj" rows="3"></textarea>
           </div>
           <div class="form-group">
-            <label for="exampleFormControlInput1">Lieu de réalisation *</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
+            <label for="lieu-realisation_prj">Lieu de réalisation *</label>
+            <select class="form-control" name ="lieu-realisation_prj" id="lieu-realisation_prj">
+              <?php foreach ($cities as $key => $city) {?>
+                <option value=<?= $city['id_ville'] ?>><?= $city['nom_ville'] ?></option>
+              <?php } ?>
             </select>
           </div>
           <div class="form-group">
-            <label for="exampleFormControlSelect1">Budget indicatif *</label>
-            <input type="number" class="form-control" id="exampleFormControlInput1">
+            <label for="budget_indicatif_prj">Budget indicatif *</label>
+            <input type="number" class="form-control" id="budget_indicatif_prj" name="budget_indicatif_prj">
           </div>
           <div class="form-group">
-            <label for="exampleFormControlInput1">Date début * </label>
-            <input type="date" class="form-control" id="exampleFormControlInput2">
+            <label for="date_debut_prj">Date début * </label>
+            <input type="date" name="date_debut_prj" class="form-control" id="date_debut_prj">
           </div>
           <div class="form-group">
-            <label for="exampleFormControlInput1">Date fin * </label>
-            <input type="date" class="form-control" id="exampleFormControlInput3">
+            <label for="date_fin_prj">Date fin * </label>
+            <input type="date" name="date_fin_prj" class="form-control" id="ndate_fin_prj">
           </div>
           <button type="submit" class="btn btn-primary">Publier</button>
         </form>

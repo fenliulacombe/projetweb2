@@ -58,19 +58,7 @@ class FreelancerModel extends Model{
         return;
     }
 
-    public function getCities(){
-        
-       $this->query('SELECT * FROM `ville`');
-       $rows =  $this->resultSet();
-       return $rows;
-    }
-
-    public function GetSectors(){
-       $this->query('SELECT * FROM `secteur`');
-       $rows =  $this->resultSet();
-       return $rows;
-       
-    }
+  
 
    
 }

@@ -27,7 +27,9 @@ class User extends Controller{
     protected function registerfreelancer()
     {
         $viewmodel = new UserModel();
-        $this->returnView(array('viewmodel'=>$viewmodel->registerfreelancer()),true);
+        $viewmodel->register();
+        $tableau = array('cities'=>$viewmodel->getCities(),'sectors'=>$viewmodel->getSectors(),'companytypes'=>$viewmodel->getCompanytypes());
+        $this->returnView($tableau,true);
     }
     
     protected function registerprovider()

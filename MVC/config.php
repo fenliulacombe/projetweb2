@@ -7,6 +7,6 @@ define("DB_NAME","projetweb2");
 
 //define URL
 define("ROOT_PATH","/");
-define("ROOT_URL","http://127.0.0.1/MVC/")
+define("ROOT_URL","http://127.0.0.1/projetweb2/MVC/")
 
 ?>
