@@ -241,10 +241,10 @@ class UserData extends Entite {
      * @return 
      */    
     public function setMdp_ut($mdp_ut = null) {
-        $regExp = "/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,15})$/";
-        if (empty($competence_ut) || !preg_match($regExp, trim($mdp_ut))) 
+        $regExp = "/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,20})$/";
+        if (empty($mdp_ut) || !preg_match($regExp, trim($mdp_ut))) 
         {
-            $this->errorsHydrate['Mot de passe'] = "Un mot de passe valide doit avoir de 8 à 15 caractères, une lettre minuscule, une lettre majuscule, un chiffre et un de ces caractères spéciaux: $ @ % * + - _ ! ";
+            $this->errorsHydrate['Mot de passe'] = "Un mot de passe valide doit avoir de 8 à 20 caractères, une lettre minuscule, une lettre majuscule, un chiffre et un de ces caractères spéciaux: $ @ % * + - _ ! ";
         } 
        $this->mdp_ut = $mdp_ut;
     }

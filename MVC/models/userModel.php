@@ -74,29 +74,28 @@ class UserModel extends Model{
         // sanitize POST
         $post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
         //$password = md5($post['password']);
-
-        if($post['submit']){
-            // die('SUBMITED'); //Print a message and exit the current script:
+       // var_dump($post);
+        if(isset($post['login_button'])){
+            //die('SUBMITED'); //Print a message and exit the current script:
             //compare login
-            $this->query('SELECT * FROM users WHERE email = :email AND password = :password');
-            $this->bind(':email', $post['email']);
-            $this->bind(':password', $password);
+            $this->query('SELECT * FROM utilisateur WHERE courriel_ut = :courriel_ut AND mdp_ut = :mdp_ut');
+            $this->bind(':courriel_ut', $post['username']);
+            $this->bind(':mdp_ut',  $post['password']);
 
-            $row = $this->single();
-
+            $row = $this->getItem();
             // verify 
             if($row){
                 echo 'Logged In';
                 $_SESSION['is_logged_in'] = true; 
                 $_SESSION['user_data'] = array(
-                    "id"    =>$row['id'],
-                    "name"  =>$row['name'],
-                    "email" =>$row['email']
+                    "id"    =>$row['id_ut'],
+                    "name"  =>$row['nom_ut'],
+                    "email" =>$row['courriel_ut']
                 ); 
                 //redirect          
-                header('location:'.ROOT_URL.'share');
-            }else{
-                echo 'Incorrect Login';
+                //header('location:'.ROOT_URL.'freelancer/register');
+            }
+            else{echo 'La connexion est incorrect. Veuillez resaisir le nom et le mot de passe.';
             }
         }
     }

@@ -3,7 +3,8 @@ class User extends Controller{
 
     protected function login(){
         $viewmodel = new UserModel();
-        $this->returnView(array('viewmodel'=>$viewmodel->login()),true);
+        $viewmodel->login();      
+        //$this->returnView(array('viewmodel'=>$viewmodel->login()),true);
     }
 
     protected function logout(){
