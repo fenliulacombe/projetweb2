@@ -8,17 +8,16 @@ class Freelancer extends Controller{
         //$this->returnView($viewmodel->getFreelancers(),true);
     }
 
-    protected function add(){
-      
-    }
-
-    protected function delete(){
-        $viewmodel = new FreelancerModel();
-        $this->returnView(array('viewmodel'=> $viewmodel->delete()),true);
-    }
-
     protected function update(){
         $viewmodel = new FreelancerModel();
         $this->returnView(array('viewmodel' =>$viewmodel->update()),true);
+    }
+
+    protected function register()
+    {
+        $viewmodel = new UserModel();
+        $viewmodel->register(3);
+        $tableau = array('cities'=>$viewmodel->getCities(),'sectors'=>$viewmodel->getSectors(),'companytypes'=>$viewmodel->getCompanytypes());
+        $this->returnView($tableau,true);
     }
 }

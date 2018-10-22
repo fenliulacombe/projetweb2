@@ -1,21 +1,28 @@
 <?php
    require ('config.php');
-
+   
+   require ('classes/Entite.class.php');
    require ('classes/Main.php');
    require ('classes/Controller.php');
    require ('classes/Model.php');
-   require ('classes/Users.class.php');
-   require ('classes/Contracts.class.php');
+   require ('classes/ContractData.class.php');
+   require ('classes/UserData.class.php');
+   require ('classes/Messages.php');
 
    require ('controllers/home.php');
    require ('controllers/contract.php');
    require ('controllers/user.php');
    require ('controllers/freelancer.php');
+   require ('controllers/provider.php');
+   require ('controllers/admin.php');
 
-   require ('models/home.php');
-   require ('models/contract.php');
-   require ('models/user.php');
-   require ('models/freelancer.php');
+
+   require ('models/homeModel.php');
+   require ('models/contractModel.php');
+   require ('models/userModel.php');
+   require ('models/freelancerModel.php');
+   require ('models/providerModel.php');
+   require ('models/adminModel.php');
 
 
    $main = new Main($_GET);// le Get est transmis par le fichier .htaccess

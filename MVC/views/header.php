@@ -12,8 +12,8 @@
                   <li class="li-m"><a href="<?= ROOT_URL ?>contract">Voir les contrats</a></li>
                   <li class="li-m"><a class="dropdown-toggle" data-toggle="dropdown" href="#">S'inscrire</a>
                         <div class="dropdown-menu">
-                          <a class="dropdown-item" href="<?= ROOT_URL ?>user/registerfreelancer">En tant que prestataire</a>
-                          <a class="dropdown-item" href="<?= ROOT_URL ?>user/registerprovider">En tant que fournisseur</a>
+                          <a class="dropdown-item" href="<?= ROOT_URL ?>freelancer/register">En tant que prestataire</a>
+                          <a class="dropdown-item" href="<?= ROOT_URL ?>provider/register">En tant que fournisseur</a>
                         </div>
                   </li>
                   <li class="li-m" data-toggle="modal" data-target="#myModal"><a href="javascript:void(0)">login</a></li>

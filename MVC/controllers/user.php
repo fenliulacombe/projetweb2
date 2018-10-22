@@ -1,15 +1,5 @@
 <?php
 class User extends Controller{
-    // protected function Index(){
-    //     $viewmodel = new UserModel();
-    //     $this->returnView($viewmodel->Index(),true);
-    // }
-
-    protected function register()
-    {
-        $viewmodel = new UserModel();
-        $this->returnView(array('viewmodel'=>$viewmodel->register()),true);
-    }
 
     protected function login(){
         $viewmodel = new UserModel();
@@ -24,17 +14,8 @@ class User extends Controller{
         header('location:'.ROOT_URL);
     }
 
-    protected function registerfreelancer()
-    {
+    protected function delete(){
         $viewmodel = new UserModel();
-        $viewmodel->register();
-        $tableau = array('cities'=>$viewmodel->getCities(),'sectors'=>$viewmodel->getSectors(),'companytypes'=>$viewmodel->getCompanytypes());
-        $this->returnView($tableau,true);
-    }
-    
-    protected function registerprovider()
-    {
-        $viewmodel = new UserModel();
-        $this->returnView(array('viewmodel'=>$viewmodel->registerprovider()),true);
+        $this->returnView(array('viewmodel'=> $viewmodel->delete()),true);
     }
 }

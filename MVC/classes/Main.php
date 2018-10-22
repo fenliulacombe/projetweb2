@@ -44,7 +44,7 @@ class Main{
             }
         } else {
             //controller class is not found
-            echo '<h1>controlleur Class n\'existe pas</h1>';
+            echo '<h1>controlleur Class'. $this->controller .' n\'existe pas</h1>';
         }
     }
 
