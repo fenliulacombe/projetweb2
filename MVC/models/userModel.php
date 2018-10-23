@@ -85,7 +85,7 @@ class UserModel extends Model{
             $row = $this->getItem();
             // verify 
             if($row){
-                echo 'Logged In';
+                //echo 'Logged In';
                 $_SESSION['is_logged_in'] = true; 
                 $_SESSION['user_data'] = array(
                     "id"    =>$row['id_ut'],

@@ -11,9 +11,10 @@
             <li class="li-m"><a href="<?= ROOT_URL ?>contract">Voir les contrats</a></li>
 
             <?php if (isset($_SESSION['is_logged_in'])) : ?>
-            <li class="li-m">Bienvenue,<a href="<?= ROOT_URL ?>contract"><?php echo $_SESSION['user_data']['name'] ?></a></li>
-            <li class="nav-item"><a class="nav-link" href="<?php echo ROOT_URL; ?>user/logout">Logout</a></li>
-            <li class="nav-item"><a class="nav-link" href="<?php echo ROOT_URL; ?>user/detail">Mon Profil</a></li>
+            <!-- <li class="li-m">Bienvenue,<a href="<?= ROOT_URL ?>contract"><?php //echo $_SESSION['user_data']['name'] ?></a></li> -->
+            
+            <li class="li-m"><a href="<?php echo ROOT_URL; ?>user/detail">Mon Profil</a></li>
+            <li class="li-m"><a href="<?php echo ROOT_URL; ?>user/logout">Logout</a></li>
             <?php else : ?>
             <li class="li-m"><a class="dropdown-toggle" data-toggle="dropdown" href="#">S'inscrire</a>
                   <div class="dropdown-menu">
@@ -21,7 +22,7 @@
                     <a class="dropdown-item" href="<?= ROOT_URL ?>provider/register">En tant que fournisseur</a>
                   </div>
             </li>
-            <button type="button" class="li-m" data-toggle="modal" data-target="#myModal">login</button>
+            <li class="li-m" data-toggle="modal" data-target="#myModal"><a href="javascript:void(0)">login</a></li>
             <!-- <li class="li-m"><a href="<?= ROOT_URL ?>user/login">login</a></li> -->
             <?php endif; ?>
           </ul>
@@ -50,6 +51,7 @@
 <!--Formulaire connexion DÉBUT-->
             <div class="row">
               <!-- <form> -->
+              <small style="color:red" id="msg_erreur"></small> 
                 <div class="form-group">
                   <label for="email1">Courriel</label>
                   <input type="email" class="form-control" id="email_login" aria-describedby="emailHelp" placeholder="Enter email">
@@ -62,9 +64,9 @@
                 <div class="form-check">
                   <input type="checkbox" class="form-check-input" id="exampleCheck1">
                   <label class="form-check-label" for="sesouvenir">Se souvenir de moi</label>
-                </div>
+                </div><br>
                 <button type="submit" value="submit" name ="login_button" id="login_button" class="btn btn-turquoise">Connexion</button>
-              <!-- </form> -->
+                <br><!-- </form> -->
             </div>     
 <!--Formulaire connexion FIN-->             
           </div>         
@@ -92,9 +94,10 @@ $(document).ready(function(){
         data:{username:username, password:password, login_button:login_button},
         success:function(data)
         {
-          alert(data);
-          if(!data){
+          //alert(data);
+          if(data){
             //alert('le courriel ou le mot de passe est incorrect.');
+            $("#msg_erreur").html(data);
           }else{
             $('#myModal').hide();
             //location.reload();
@@ -103,7 +106,7 @@ $(document).ready(function(){
         }
       });
     }else{
-      alert("Veuillez saisir votre mail et votre mot de passe.");
+      $("#msg_erreur").html("Veuillez saisir votre mail et votre mot de passe.");
     }
   });
 
