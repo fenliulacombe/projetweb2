@@ -24,7 +24,7 @@
     ?>
     <!--Cette partie doit etre dans une boucle pour afficher les blocs-->
       <div class="card">
-        <a href="<?= ROOT_URL ?>freelancer/<?= $topfreelancer['id_ut'] ?>">
+        <a href="<?= ROOT_URL ?>freelancer/detail/<?= $topfreelancer['id_ut'] ?>">
           <div class="image">
             <img class="card-img-top" src="<?= ROOT_URL ?>assets/images/portrait<?= rand(4,23); ?>.jpg" alt="Card image">
             <div class="overlay">
@@ -56,20 +56,20 @@
     <!-- utiliser le tableau associatif $freelancers pour faire afficher tous les tops freelancers -->
     <?php foreach ($freelancers as $key => $freelancer) { ?>
       <div class="card row mx-auto content">
-        <a href="#">
+        <a href="<?= ROOT_URL ?>freelancer/detail/<?= $freelancer['id_ut']; ?>">
           <div class="image">
             <img class="card-img-top" src="<?= ROOT_URL ?>assets/images/portrait<?= rand(4,23); ?>.jpg" alt="Card image">
             <div class="overlay">      
             </div>
           </div>
-        </a>         
+        </a>
         <div class="card-body">
           <h5 class="card-title"><?php echo $freelancer['prenom_ut'] ?></h5>
           <h6 class="card-title"><?php echo $freelancer['nom_secteur'] ?></h6>
           <p><?php echo 'competence' ?></p>                   
           <div>
             <span class="ville"><i class="fas fa-map-marker-alt"></i><?php echo $freelancer['nom_ville'] ?></span>
-            <span class="rate" title="Nombre de vote"><i class="fas fa-star"></i><?php echo $freelancer['note_eval'] . '%' ?></span><br>
+            <span class="rate" title="Nombre de vote"><i class="fas fa-star"></i><?php echo $freelancer['moyenne'] . '%' ?></span><br>
             <span class="taux"><i class="fas fa-dollar-sign"></i><?php echo $freelancer['taux_horaire_ut'].'/h' ?></span>
           </div>
         </div>

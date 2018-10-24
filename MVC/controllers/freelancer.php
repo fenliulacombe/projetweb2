@@ -20,4 +20,9 @@ class Freelancer extends Controller{
         $tableau = array('cities'=>$viewmodel->getCities(),'sectors'=>$viewmodel->getSectors(),'companytypes'=>$viewmodel->getCompanytypes());
         $this->returnView($tableau,true);
     }
+
+    protected function detail(){
+        $viewmodel = new FreelancerModel();
+        $this->returnView(array('freelancer' =>$viewmodel->getFreelancer($_GET['id']),'evaluateur'=>$viewmodel->getEvaluateurs($_GET['id'])),true);
+    }
 }

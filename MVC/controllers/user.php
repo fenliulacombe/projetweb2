@@ -15,6 +15,12 @@ class User extends Controller{
         header('location:'.ROOT_URL);
     }
 
+    protected function profil(){
+        $viewmodel = new UserModel();
+        $this->returnView(array('viewmodel'=> $viewmodel->getUser($_SESSION['user_data']['id'])),true);
+    }
+    
+
     protected function delete(){
         $viewmodel = new UserModel();
         $this->returnView(array('viewmodel'=> $viewmodel->delete()),true);

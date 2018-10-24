@@ -54,7 +54,7 @@ class UserModel extends Model{
                 $this->bind(':id_type_etse_ut', $user->getIdTypeEtse(), PDO::PARAM_INT);
                 $this->bind(':id_ville_ut',$user->getIdVille(), PDO::PARAM_INT);
                 $res = $this->execute();
-                var_dump($res);
+                //var_dump($res);
             // }
             // catch(Exception $e){
             //     Messages::setMsg('Exception reçue : '.$e->getMessage()."\n");
@@ -115,15 +115,25 @@ class UserModel extends Model{
         return $rows;
      }
  
-     public function GetSectors(){
+     public function getSectors(){
         $this->query('SELECT * FROM `secteur`');
         $rows =  $this->resultSet();
         return $rows;   
      }
  
-     public function GetCompanytypes(){
+     public function getCompanytypes(){
          $this->query('SELECT * FROM `type_entreprise`');
          $rows =  $this->resultSet();
          return $rows;   
       }
+
+    public function getUser($id){      
+        $this->query('SELECT *,COUNT(`id_ut`) FROM utilisateur 
+        LEFT JOIN `evaluer` ON `utilisateur`.`id_ut` = `evaluer`.`id_evaluer_eval`
+        INNER JOIN `secteur` ON `utilisateur`.`id_secteur_ut` = `secteur`.`id_secteur`
+        INNER JOIN `ville` ON `utilisateur`.`id_ville_ut` = `ville`.`id_ville` 
+        WHERE `id_ut` = '.$id);
+        $rows =  $this->resultSet();
+        return $rows;
+    }
 }

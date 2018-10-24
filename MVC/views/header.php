@@ -13,7 +13,7 @@
             <?php if (isset($_SESSION['is_logged_in'])) : ?>
             <!-- <li class="li-m">Bienvenue,<a href="<?= ROOT_URL ?>contract"><?php //echo $_SESSION['user_data']['name'] ?></a></li> -->
             
-            <li class="li-m"><a href="<?php echo ROOT_URL; ?>user/detail">Mon Profil</a></li>
+            <li class="li-m"><a href="<?php echo ROOT_URL; ?>user/profil">Mon Profil</a></li>
             <li class="li-m"><a href="<?php echo ROOT_URL; ?>user/logout">Logout</a></li>
             <?php else : ?>
             <li class="li-m"><a class="dropdown-toggle" data-toggle="dropdown" href="#">S'inscrire</a>
