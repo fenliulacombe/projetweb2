@@ -36,8 +36,8 @@
           <h6 class="card-title"><?php echo $topfreelancer['nom_secteur'] ?></h6>
           <p><?php echo 'competence' ?></p>
           <div>
-            <span class="ville"><i class="fas fa-map-marker-alt"></i> <?php echo $topfreelancer['nom_ville'] ?></span>
-            <span class="rate" title="Nombre de vote"><i class="fas fa-star"></i> <?php echo $topfreelancer['note_eval'].'%'  ?></span>
+            <span class="ville"><i class="fas fa-map-marker-alt"></i><?php echo "&nbsp".$topfreelancer['nom_ville'] ?></span>
+            <span class="rate" title="Nombre de vote"><i class="fas fa-star"></i> <?php echo $topfreelancer['note_eval'].'%'.'('.$topfreelancer['NBREVAL'].')' ?></span>
             <br>
             <span class="taux"><i class="fas fa-dollar-sign"></i><?php echo $topfreelancer['taux_horaire_ut'].'/h' ?></span>
           </div>
@@ -68,8 +68,8 @@
           <h6 class="card-title"><?php echo $freelancer['nom_secteur'] ?></h6>
           <p><?php echo 'competence' ?></p>                   
           <div>
-            <span class="ville"><i class="fas fa-map-marker-alt"></i><?php echo $freelancer['nom_ville'] ?></span>
-            <span class="rate" title="Nombre de vote"><i class="fas fa-star"></i><?php echo $freelancer['moyenne'] . '%' ?></span><br>
+            <span class="ville"><i class="fas fa-map-marker-alt"></i><?php echo "&nbsp".$freelancer['nom_ville'] ?></span>
+            <span class="rate" title="Nombre de vote"><i class="fas fa-star"></i><?php echo $freelancer['moyenne'] . '%' .'('.$freelancer['NBREVAL'].')'?></span><br>
             <span class="taux"><i class="fas fa-dollar-sign"></i><?php echo $freelancer['taux_horaire_ut'].'/h' ?></span>
           </div>
         </div>

@@ -2,7 +2,7 @@
 <h3>Publier un projet</h3>
     <div class="row">
         <div class="col">
-        <form>
+        <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
           <div class="form-group">
             <label for="titre_prj">Titre du projet *</label>
             <input type="text" name="titre_prj" class="form-control" id="titre_prj">
@@ -41,9 +41,9 @@
           </div>
           <div class="form-group">
             <label for="date_fin_prj">Date fin * </label>
-            <input type="date" name="date_fin_prj" class="form-control" id="ndate_fin_prj">
+            <input type="date" name="date_fin_prj" class="form-control" id="date_fin_prj">
           </div>
-          <button type="submit" class="btn btn-primary">Publier</button>
+          <input type="submit" value="publier" name="publier" class="btn btn-primary">
         </form>
         </div>
     </div>

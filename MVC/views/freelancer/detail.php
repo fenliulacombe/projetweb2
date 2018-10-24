@@ -4,14 +4,14 @@
     <div class="row">
       <div class="col-sm-4">
         <div class="card">
-          <div class="image"><img class="card-img-top" src="images/profil.jpg" alt="Card image">
+          <div class="image"><img class="card-img-top" src="<?= ROOT_URL ?>assets/images/portrait<?= rand(4,23); ?>.jpg" alt="Card image">
           </div>
           <div class="card-body">
-            <div><i class="fas fa-tags"></i><?= $freelancer['competence_ut'] ?>
+            <div><i class="fas fa-tags"></i><?= '&nbsp'.$freelancer['titre_profil_ut'] ?>
             </div>
-            <div class="ville"><i class="fas fa-map-marker-alt"></i><?= $freelancer['nom_ville'] ?></div>
-              <div class="rate" title="Nombre de vote"><i class="far fa-calendar-check"></i><?= $freelancer['disponibilite_ut'] ?></div>
-                <div class="taux"><i class="fas fa-dollar-sign"></i><?= $freelancer['taux_horaire_ut'] ?>/h</div>
+            <div class="ville"><i class="fas fa-map-marker-alt"></i><?= '&nbsp'.$freelancer['nom_ville'] ?></div>
+              <div class="rate" title="Nombre de vote"><i class="far fa-calendar-check"></i><?= '&nbsp'.$freelancer['disponibilite_ut'] ?></div>
+                <div class="taux"><i class="fas fa-dollar-sign"></i><?= '&nbsp'.$freelancer['taux_horaire_ut'] ?>/h</div>
               </div>
             </div>
             <div id="vote-msg">
@@ -38,7 +38,7 @@
                 </form>
               </div>
               <div class="card">
-              <h5>Contacter Anna</h5>
+              <h5>Contacter <?= $freelancer['prenom_ut'] ?></h5>
               <form>
                 <input type="hidden" name="id_msg" class="form-control" id="id_msg">
                 <div class="form-group">
@@ -65,36 +65,35 @@
                     <div class="detail">
                         <h4><?= $freelancer['prenom_ut'] ?> <?= $freelancer['nom_ut'] ?></h4>
                         <h5><?= $freelancer['nom_ville'] ?></h5>
-                        <?php if($_SESSION['user_data']['id']): ?>
-                        <div class="dispo"><i class="fas fa-circle"></i>Disponible</div>
+                        <?php if(isset($_SESSION['user_data']['id'])): ?>
+                        <div class="dispo"><i class="fas fa-circle"></i> Disponible</div>
                         <?php else: ?>
-                        <div class="dispo"><i class="fas fa-circle" style="color:red"></i>Indisponible</div>
+                        <div class="dispo"><i class="fas fa-circle" style="color:red"></i> Indisponible</div>
                         <?php endif ?>
-                    </div>
+                    </div><br>
                 </div>
                 <div class="col-sm-3">
                     <div class="best-rate">Top Vote<i class="fas fa-star"></i></div>
-                </div>
+                </div><br>
             </div>
             <div class="detail">
                 <h5>A propos</h5>
-                <div>Depuis 2010, je travaille en tant que web designer et graphiste indépendant pour certaines entreprises. Pendant ce temps, j'ai acquis beaucoup de connaissances et d'expériences sur les graphiques, l'interface utilisateur / UX, la conception de logo et la stratégie de marque.<br> Je suis spécialiste de l'interface utilisateur de l'application Web et mobile, et de l'identité de la marque.<br> Certains clients et amis ont déclaré: «Mon design est caractéristique car je travaille toujours avec originalité et sans plagiat.</div>
+                <div><?= $freelancer['apropos_ut'] ?></div><br>
             </div>
             <div class="detail">
                 <h5>Compétences</h5>
                 <ul>
-                    <li>Photoshop</li>
-                    <li>Ullustrator</li>
-                    <li>PSD2HTML</li>
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>Responsive Web Design</li>
+                <?php $competences = preg_split("/[,]+/", $freelancer['competence_ut']);
+                  foreach($competences as $competence):
+                ?>
+                    <li><?= $competence ?></li>
+                  <?php endforeach ?>
                 </ul>
             </div>
             <div class="detail">
                 <h5>Nombre de projets soummissionés</h5>
-                <div><i class="fas fa-check"></i> 365 Projets</div>
-            </div>
+                <div><i class="fas fa-check"></i> x Projets</div>
+            </div><br>
             <div class="detail">
                 <h5>Années d'experience</h5>
                 <div><i class="fas fa-graduation-cap"></i> <?= $freelancer['annee_experience_ut'] ?> ans</div>

@@ -13,6 +13,9 @@
       integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
       crossorigin="anonymous">
     </script>
+<!--Caroussel-->
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script> 
+<script src="<?= ROOT_URL ?>assets/js/multislider.js"></script>    
 <!-- <script src="<?= ''// ROOT_URL; ?>assets/js/bootstrap.min.js"></script> -->
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="<?= ROOT_URL; ?>assets/css/bootstrap.min.css">

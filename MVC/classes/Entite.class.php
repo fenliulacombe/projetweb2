@@ -25,6 +25,7 @@ class Entite {
             }
         }
         return $this->errorsHydrate; 
+        
     }
     
     /**

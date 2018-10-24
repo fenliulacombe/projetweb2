@@ -15,7 +15,7 @@ class ContractModel extends Model
     {
         $this->query('SELECT *,COUNT(id_prj_soum) AS nombre_soum FROM projet
             LEFT JOIN `soumissioner` ON `projet`.`id_prj` = `soumissioner`.`id_prj_soum`
-                GROUP BY id_prj_soum LIMIT 3');
+                GROUP BY id_prj_soum LIMIT 7');
         $rows = $this->resultSet();
         return $rows;
     }
@@ -45,20 +45,37 @@ class ContractModel extends Model
     public function addContract()
     {
         $post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-
-        if ($post['submit']) {
+        if (isset($post['publier'])){
             //insert into Mysql
-            $this->query('INSERT INTO projet () VALUES ()');
-            $this->bind(':title', $post['title']);
-            $this->bind(':body', $post['link']);
-            $this->bind(':link', $post['link']);
-            $this->bind(':user_id', 1);
+            $contract = new ContractData();
+            $erreurs = $contract->hydrate($post);
+            if (count($erreurs) > 0)
+            {
+                $msg = '';
+                foreach ($erreurs as $key => $value) {
+                    $msg .= 'Champ '. $key . ' : '. $value .'<br>';
+                }
+                Messages::setMsg($msg, 'error');
+                return;
+            }
+
+            $this->query('INSERT INTO `projet` (`titre_prj`, `type_prj`, `description_prj`, `lieu_realisation_prj`, `budget_indicatif_prj`, `date_debut_prj`, `date_fin_prj`, `id_ut_prj`, `id_secteur_prj`) VALUES (:titre_prj,:type_prj,:description_prj,:lieu_realisation_prj,:budget_indicatif_prj, :date_debut_prj, :date_fin_prj, :id_ut_prj, :id_secteur_prj)');
+                
+            $this->bind(':titre_prj', $contract->getTitreContract());
+            $this->bind(':type_prj', $contract->getTypeContract());
+            $this->bind(':description_prj', $contract->getDescriptionContract());
+            $this->bind(':lieu_realisation_prj', $contract->getLieuRealisationContract());
+            $this->bind(':budget_indicatif_prj', $contract->getBudgetIndicatifContract());
+            $this->bind(':date_debut_prj', $contract->getDateDebutContract());
+            $this->bind(':date_fin_prj', $contract->getDateFinContract());
+            $this->bind(':id_ut_prj', $contract->getIdUtContract());
+            $this->bind(':id_secteur_prj', $contract->getIdSecteurContract());
             $this->execute();
 
             // verify
             if ($this->lastInsertId()) {
                 //redirect
-                header('location:' . ROOT_URL . 'contrat');
+                header('location:' . ROOT_URL . 'contract');
             }
         }
         return;

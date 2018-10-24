@@ -50,9 +50,11 @@ function getPageList(totalPages, page, maxLength) {
 }
 
 $(function() {
+          
+
   // Number of items and limits the number of items per page
   var numberOfItems = $("#jar .content").length;
-  var limitPerPage = 12;
+  var limitPerPage = 8;
   // Total pages rounded upwards
   var totalPages = Math.ceil(numberOfItems / limitPerPage);
   // Number of buttons at the top, not counting prev/next,
@@ -129,7 +131,48 @@ $(function() {
   $(".pagination").on("click", function() {
     $("html,body").animate({ scrollTop: 0 }, 0);
   });
+});
 
+/*UPLOAD IMAGE*/
+//https://codepen.io/jacoahmad/pen/mmYRqe
+$(document).ready(function() {
+
+    
+    var readURL = function(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('.profile-pic').attr('src', e.target.result);
+            }
+    
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    
+
+    $(".file-upload").on('change', function(){
+        readURL(this);
+    });
+    
+    $(".upload-button").on('click', function() {
+       $(".file-upload").click();
+    });
 });
 
 
+/**
+ * Chosen: Multiple Dropdown
+ */
+//https://codepen.io/taulantspahiu/pen/bVJXXy
+
+$(document).ready(function(){
+  //Chosen
+  $(".multipleChosen").chosen({
+      placeholder_text_multiple: "What's your rating" //placeholder
+	});
+  //Select2
+  $(".multipleSelect2").select2({
+		placeholder: "What's your rating" //placeholder
+	});
+})

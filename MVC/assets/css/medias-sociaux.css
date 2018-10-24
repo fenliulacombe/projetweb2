@@ -5,10 +5,10 @@
 
 @import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
 
-#social {
+/*#social {
   margin: 20px 10px;
   text-align: center;
-}
+}*/
 
 /* cercle (bouton)*/
 .smGlobalBtn {
@@ -18,7 +18,7 @@
     width: 40px;
     height: 40px;
     border:2px solid #ddd;
-    box-shadow: 0 3px 3px #999;
+    box-shadow: 0 1px 1px #D7D7D7;
     padding: 0px;
     text-decoration: none;
     text-align: center;

@@ -66,7 +66,7 @@ class UserModel extends Model{
                 header('location:'.ROOT_URL);
             }
         }
-        //Messages::setMsg('test', 'error');
+
         return;
     }
 
