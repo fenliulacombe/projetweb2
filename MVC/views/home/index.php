@@ -69,9 +69,9 @@
                 <td>Nombre de soumissionnaires pour ce projet: <strong><?php echo $value['nombre_soum'] ?></strong>
                 <br>
                 Budget de: <strong><?php echo $value['budget_indicatif_prj'] ?> $CAN</strong></td>
-                <?php if ($value['etat_soum'] == 0) { ?>
+                <?php if ($value['etat_soumis'] == 0) { ?>
                 <td style="text-align:right">État du contrat : <span class="contrat-ouvert">OUVERT</span></td>
-                <?php } elseif ($value['etat_soum'] == 1) { ?>
+                <?php } elseif ($value['etat_soumis'] == 1) { ?>
                 <td style="text-align:right">État du contrat : <span class="contrat-ferme">FERME</span></td>
                 <?php } ?> 
             </tr>
@@ -98,13 +98,15 @@ $('#mixedSlider').multislider({
 /*function qui vérifie si la session id est présent pour savoir si la page retourne vers la publication*/
 function publier(){
 
-    var userDatas = '<?= isset($_SESSION['is_logged_in']) ? JSON.encode($_SESSION['user_data']) : ''; ?>';
+    var isConnected = '<?= isset($_SESSION['is_logged_in']) ?true : ''; ?>';
     if (isConnected !== '')
     {
         location.href = '<?= ROOT_URL ?>contract/add';
     }
     else{
-        alert("Veuillez vous connecter en tant que fournisseur pour publier un contrat.");
+        //alert("Veuillez vous connecter en tant que fournisseur pour publier un contrat.");
+        //Messages::setMsg("Veuillez vous inscrire ou vous connecter en tant que fournisseur pour publier un contrat.", 'success');
+        location.href = '<?= ROOT_URL ?>provider/register';
     }
 }
 </script>

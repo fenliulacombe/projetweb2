@@ -2,20 +2,24 @@
 class ContractModel extends Model
 {
     /*afficher les contrats*/
-    public function getContracts()
+    public function getContracts($limit=null)
     {
-        $this->query('SELECT *,COUNT(id_prj_soum) AS nombre_soum FROM projet
-            LEFT JOIN `soumissioner` ON `projet`.`id_prj` = `soumissioner`.`id_prj_soum`
-                GROUP BY id_prj_soum ');
+        $this->query('SELECT *,COUNT(id_prj_soum) AS nombre_soum, 
+        CASE
+        WHEN `date_debut_prj` > CURDATE() OR `date_fin_prj`< CURDATE() THEN  1 
+        ELSE 0
+        END AS etat_soumis
+        FROM projet
+        LEFT JOIN `soumissioner` ON `projet`.`id_prj` = `soumissioner`.`id_prj_soum`
+        GROUP BY id_prj_soum '. ($limit != null ? 'LIMIT '.$limit : ''));
         $rows = $this->resultSet();
         return $rows;
     }
 
-    public function getLastContracts()
+
+    public function valideDate()
     {
-        $this->query('SELECT *,COUNT(id_prj_soum) AS nombre_soum FROM projet
-            LEFT JOIN `soumissioner` ON `projet`.`id_prj` = `soumissioner`.`id_prj_soum`
-                GROUP BY id_prj_soum LIMIT 7');
+        $this->query('CASE');
         $rows = $this->resultSet();
         return $rows;
     }
@@ -49,6 +53,7 @@ class ContractModel extends Model
             //insert into Mysql
             $contract = new ContractData();
             $erreurs = $contract->hydrate($post);
+            var_dump($post);
             if (count($erreurs) > 0)
             {
                 $msg = '';
@@ -60,7 +65,7 @@ class ContractModel extends Model
             }
 
             $this->query('INSERT INTO `projet` (`titre_prj`, `type_prj`, `description_prj`, `lieu_realisation_prj`, `budget_indicatif_prj`, `date_debut_prj`, `date_fin_prj`, `id_ut_prj`, `id_secteur_prj`) VALUES (:titre_prj,:type_prj,:description_prj,:lieu_realisation_prj,:budget_indicatif_prj, :date_debut_prj, :date_fin_prj, :id_ut_prj, :id_secteur_prj)');
-                
+            var_dump($_SESSION['user_data']['id']);   
             $this->bind(':titre_prj', $contract->getTitreContract());
             $this->bind(':type_prj', $contract->getTypeContract());
             $this->bind(':description_prj', $contract->getDescriptionContract());
@@ -68,10 +73,10 @@ class ContractModel extends Model
             $this->bind(':budget_indicatif_prj', $contract->getBudgetIndicatifContract());
             $this->bind(':date_debut_prj', $contract->getDateDebutContract());
             $this->bind(':date_fin_prj', $contract->getDateFinContract());
-            $this->bind(':id_ut_prj', $contract->getIdUtContract());
+            $this->bind(':id_ut_prj',$_SESSION['user_data']['id']);
             $this->bind(':id_secteur_prj', $contract->getIdSecteurContract());
             $this->execute();
-
+            var_dump($this->execute());
             // verify
             if ($this->lastInsertId()) {
                 //redirect

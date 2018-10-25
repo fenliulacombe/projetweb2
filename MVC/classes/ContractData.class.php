@@ -12,7 +12,6 @@ class ContractData extends Entite
     private $date_fin_prj = NULL;
     private $id_ut_prj = NULL;
     private $id_secteur_prj = NULL;
-    private $erreur = array();
     /*
      * Le constructeur de
     //  */
@@ -150,7 +149,7 @@ public function setId_secteur_prj($id_secteur_prj = NULL)
  * @return boolean
  */
     public function setDate_debut_prj($date_debut_prj = NULL)
-    {
+    {   
         if(empty($date_debut_prj)){
             $this->errorsHydrate['date_debut_prj'] = "Veuillez saisir votre date début du projet";            
         }
@@ -177,7 +176,7 @@ public function setId_secteur_prj($id_secteur_prj = NULL)
  */
     public function setId_ut_prj($id_ut_prj = NULL)
     {
-        $this->id_ut_prj = $_SESSION['user_data']['id'];
+        $this->id_ut_prj = $id_ut_prj;
     }
 
 }

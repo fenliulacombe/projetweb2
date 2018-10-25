@@ -34,13 +34,13 @@
             <td>Nombre de soumissionnaires pour ce projet: <strong><?php echo $value['nombre_soum'] ?></strong>
             <br>
             Budget de <strong><?php echo $value['titre_prj'] ?></strong></td>
-            <?php if ($value['etat_soum'] == 0) { ?>
+            <?php if ($value['etat_soumis'] == 0) { ?>
             <td style="text-align:right">État du contrat : <span class="contrat-ouvert">OUVERT</span></td>
-            <?php } elseif ($value['etat_soum'] == 1) { ?>
+            <?php } elseif ($value['etat_soumis'] == 1) { ?>
             <td style="text-align:right">État du contrat : <span class="contrat-ferme">FERME</span></td>
             <?php } ?> 
         </tr>
-
+        
         </tbody>
         </table>
         

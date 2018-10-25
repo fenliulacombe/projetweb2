@@ -9,7 +9,7 @@ class Contract extends Controller{
         $viewmodel = new ContractModel();
         $usermodel = new UserModel();
         $viewmodel->addContract();
-        $this->returnView(array('cities'=>$usermodel->getCities(),'sectors'=>$usermodel->getSectors()),true);
+        $this->returnView(array('sectors'=>$usermodel->getSectors()),true);
     }
 
     protected function delete(){
