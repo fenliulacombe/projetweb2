@@ -133,7 +133,7 @@ class UserModel extends Model{
         INNER JOIN `secteur` ON `utilisateur`.`id_secteur_ut` = `secteur`.`id_secteur`
         INNER JOIN `ville` ON `utilisateur`.`id_ville_ut` = `ville`.`id_ville` 
         WHERE `id_ut` = '.$id);
-        $rows =  $this->resultSet();
+        $rows =  $this->getItem();
         return $rows;
     }
 }

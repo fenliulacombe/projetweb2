@@ -17,7 +17,7 @@ class User extends Controller{
 
     protected function profil(){
         $viewmodel = new UserModel();
-        $this->returnView(array('viewmodel'=> $viewmodel->getUser($_SESSION['user_data']['id'])),true);
+        $this->returnView(array('userprofil'=> $viewmodel->getUser($_SESSION['user_data']['id'])),true);
     }
     
 

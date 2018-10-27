@@ -16,6 +16,21 @@ class ContractModel extends Model
         return $rows;
     }
 
+    public function getContractsByProvider($id_provider)
+    {
+        $this->query('SELECT *,COUNT(id_prj_soum) AS nombre_soum, 
+        CASE
+        WHEN `date_debut_prj` > CURDATE() OR `date_fin_prj`< CURDATE() THEN  1 
+        ELSE 0
+        END AS etat_soumis
+        FROM projet
+        LEFT JOIN `soumissioner` ON `projet`.`id_prj` = `soumissioner`.`id_prj_soum`
+        GROUP BY id_prj_soum '. ($limit != null ? 'LIMIT '.$limit : '').'
+        WHERE id_ut_prj = '.$id_provider);
+        $rows = $this->resultSet();
+        return $rows;
+    }
+
 
     public function valideDate()
     {
