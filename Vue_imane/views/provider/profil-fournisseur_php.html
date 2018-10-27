@@ -1,0 +1,189 @@
+<!--27 oct-->
+<!doctype html>
+<html lang="en">
+<head>
+    <?php include '../../view/includes/meta.php'; ?>
+    <title>Profil fournisseur</title>
+</head>
+<body>
+<!--Partie LOGO/MENU--> 
+<?php include '../../view/includes/header.php'; ?>
+<div class="bandeau"></div>
+<div class="container" id="profil">
+    <!--A PROPOS PIGISTE-->
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="detail-ese">
+                        <h4>Nom entreprise</h4>
+                        <h5>Nom/Prenom</h5>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="detail-ese">
+                        <div class="ville"><i class="fas fa-map-marker-alt"></i> Adresse</div>
+                        <div class="rate" title="Nombre de vote"><i class="fas fa-phone"></i> NºTelephone </div>
+                        <div class="taux"><i class="fas fa-briefcase"></i> NEQ</div>
+                    </div>
+                    <div class="icon-update"><a href="#"><i class="fas fa-pen-square"></i></a></div>
+                </div>
+            </div>
+            <div class="info-plus">
+                <h5>A propos</h5>
+                <div>Depuis 2010, je travaille en tant que web designer et graphiste indépendant pour certaines entreprises. Pendant ce temps, j'ai acquis beaucoup de connaissances et d'expériences sur les graphiques, l'interface utilisateur / UX, la conception de logo et la stratégie de marque.<br> Je suis spécialiste de l'interface utilisateur de l'application Web et mobile, et de l'identité de la marque.<br> Certains clients et amis ont déclaré: «Mon design est caractéristique car je travaille toujours avec originalité et sans plagiat.</div>
+            </div>
+            <div class="info-plus">
+            <div id="accordion" role="tablist">
+                <div role="tab" id="headingOne">
+                  <h5 class="mb-0">
+                    <a data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                      <i class="fas fa-chevron-circle-right"></i> Vos Contrat publiés
+                    </a>
+                  </h5>
+                </div>
+                
+                <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+                  <!--LA BOUCLE COMMENCE PAR ICI-->
+                  <table class="table tab-index">
+                    <tbody>
+                      <tr style="border:none">
+                        <th class="tab-titre" style="border:none"><a href="view/fournisseur/detail_contrats.php">Programmation pour formulaire web</a></th>
+                        <th style="text-align:right">
+                            <button type="submit" id="modifer" class="btn-crud">
+                                <a href="#">Modifier</a>
+                            </button>
+                            <button type="submit" id="modifer" class="btn-crud-delete">
+                                <a href="#">Supprimer</a>
+                            </button>
+                        </th>
+                          
+                      </tr>
+                      <tr>
+                        <td>Soumissionnaires: <strong>12</strong>
+                          <br>
+                          Budget de <strong>XXXX $</strong> à <strong>XXXXX $</strong> </td>
+                        <td style="text-align:right">État du contrat : <span class="contrat-ouvert">OUVERT</span></td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">
+                            <div id="accordion2" role="tablist">
+                                <div role="tab" id="headingOne">
+                                  <h5 class="mb-0">
+                                    <a data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                      <i class="fas fa-chevron-circle-right"></i> Les soumissionnaires
+                                    </a>
+                                  </h5>
+                                </div>
+                                
+                                <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTWO" data-parent="#accordion2">
+                                  <!--LA BOUCLE COMMENCE PAR ICI (bouclez les tables)-->
+                                  <table class="table tab-index">
+                                    <tbody>
+                                      <tr style="border:none">
+                                        <th class="tab-titre" style="border:none"><a href="#">Anna</a></th>
+                                          <td>Designers/Artistes </td>
+                                          <td style="text-align:right">
+                                              <button type="submit" id="modifer" class="btn-crud" data-toggle="modal" data-target="#ModalDetail">
+                                                  <a href="#">detail</a>
+                                              </button>
+                                              <button type="submit" id="modifer" class="btn-crud-add">
+                                                  <a href="#">Choisir ce candidat</a>
+                                              </button>
+                                          </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                
+                                  <table class="table tab-index">
+                                    <tbody>
+                                      <tr style="border:none">
+                                        <th class="tab-titre" style="border:none"><a href="#">Mark German</a></th>
+                                          <td>Programmeur </td>
+                                          <td style="text-align:right">
+                                              <button type="submit" id="modifer" class="btn-crud" data-toggle="modal" data-target="#ModalDetail">
+                                                  <a href="#">detail</a>
+                                              </button>
+                                              <button type="submit" id="modifer" class="btn-crud-add">
+                                                  <a href="#">Candidat choisie <i class="fas fa-check"></i></a>
+                                              </button>
+                                          </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                  <!--LA BOUCLE SE TERMINE ICI-->
+                                </div>
+                                
+                            </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <!--LA BOUCLE SE TERMINE ICI-->
+                </div>
+                
+            </div>
+            
+            </div>
+        </div>
+    </div>  
+
+    
+</div>
+    
+<!-- ModalDetail Freelancer -->
+<div class="container" id="pigiste">
+    <div class="modal fade" id="ModalDetail" role="dialog">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header detail">
+            <h4 class="modal-title" id="exampleModalLongTitle">Anna</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body detail-modal">
+
+            <h5>A propos</h5>
+            <div>Depuis 2010, je travaille en tant que web designer et graphiste indépendant pour certaines entreprises. Pendant ce temps, j'ai acquis beaucoup de connaissances et d'expériences sur les graphiques, l'interface utilisateur / UX, la conception de logo et la stratégie de marque.
+            Je suis spécialiste de l'interface utilisateur de l'application Web et mobile, et de l'identité de la marque.
+            Certains clients et amis ont déclaré: «Mon design est caractéristique car je travaille toujours avec originalité et sans plagiat.</div>
+            
+            <div class="detail-modal">
+                <h5>Compétences</h5>
+                <ul>
+                    <li>Photoshop</li>
+                    <li>Ullustrator</li>
+                    <li>PSD2HTML</li>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>Responsive Web Design</li>
+                </ul>
+            </div>
+            
+            <div class="detail-modal">
+                <h5>Taux horaire</h5>
+                <div><i class="fas fa-dollar-sign"></i> 30/h</div>
+            </div>
+              
+            <div class="detail-modal">
+                <h5>Années d'experience</h5>
+                <div><i class="fas fa-graduation-cap"></i> 10 ans</div>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div> 
+    
+    <!--Partie FOOTER--> 
+    <?php include '../../view/includes/foot.php'; ?>
+</div>
+
+
+</body>
+</html>
