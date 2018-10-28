@@ -49,9 +49,8 @@ function getPageList(totalPages, page, maxLength) {
     .concat(range(totalPages - sideWidth + 1, totalPages));
 }
 
-$(function() {
+$(document).ready(function() {
           
-
   // Number of items and limits the number of items per page
   var numberOfItems = $("#jar .content").length;
   var limitPerPage = 8;
@@ -131,11 +130,11 @@ $(function() {
   $(".pagination").on("click", function() {
     $("html,body").animate({ scrollTop: 0 }, 0);
   });
-});
+
 
 /*UPLOAD IMAGE*/
 //https://codepen.io/jacoahmad/pen/mmYRqe
-$(document).ready(function() {
+
 
     
     var readURL = function(input) {
@@ -158,6 +157,15 @@ $(document).ready(function() {
     $(".upload-button").on('click', function() {
        $(".file-upload").click();
     });
+
+    //Chosen
+  $(".multipleChosen").chosen({
+      placeholder_text_multiple: "What's your rating" //placeholder
+	});
+  //Select2
+  $(".multipleSelect2").select2({
+		placeholder: "What's your rating" //placeholder
+	});
 });
 
 
@@ -166,13 +174,4 @@ $(document).ready(function() {
  */
 //https://codepen.io/taulantspahiu/pen/bVJXXy
 
-$(document).ready(function(){
-  //Chosen
-  $(".multipleChosen").chosen({
-      placeholder_text_multiple: "What's your rating" //placeholder
-	});
-  //Select2
-  $(".multipleSelect2").select2({
-		placeholder: "What's your rating" //placeholder
-	});
-})
+
