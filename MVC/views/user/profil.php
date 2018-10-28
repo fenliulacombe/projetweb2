@@ -34,27 +34,39 @@
                   </h5>
                 </div>
                 
-                <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
                   <!--LA BOUCLE COMMENCE PAR ICI-->
-                  <?php foreach($projects as $project): ?>
+                  <?php $old_id_soumission ='';
+                   foreach($projects as $soumission): ?>
+                    <?php if($soumission['id_prj'] != $old_id_soumission): ?>
+                    <?php if($old_id_soumission != ''): ?>
+                                    </tbody>
+                                  </table> <!-- soumissionnaires -->
+                                </div> <!-- id="collapseTwo" -->
+                            </div> <!-- id="accordion2" -->
+                        </td> <!-- colspan="2" -->
+                      </tr>
+                    </tbody>
+                  </table> <!-- contrats -->
+                  </div>
+                  <?php endif; ?>
+                  <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
                   <table class="table tab-index">
                     <tbody>
                       <tr style="border:none"> 
-                        <th class="tab-titre" style="border:none"><a href="view/fournisseur/detail_contrats.php">Programmation pour formulaire web</a></th>
+                        <th class="tab-titre" style="border:none"><a href="view/fournisseur/detail_contrats.php"><?= $soumission['titre_prj'] ?></a></th>
                         <th style="text-align:right">
                             <button type="submit" id="modifer_prj" class="btn-crud">
-                                <a href="<?php echo ROOT_URL; ?>contract/update/"<?= $projets['id_prj'] ?>>Modifier</a>
+                                <a href="<?php echo ROOT_URL; ?>contract/update/"<?= $soumission['id_prj'] ?>>Modifier</a>
                             </button>
                             <button type="submit" id="supprimer_prj" class="btn-crud-delete">
-                                <a href="<?php echo ROOT_URL; ?>contract/delete/"<?= $projets['id_prj'] ?>>Supprimer</a>
+                                <a href="<?php echo ROOT_URL; ?>contract/delete/"<?= $soumission['id_prj'] ?>>Supprimer</a>
                             </button>
-                        </th>
-                          
+                        </th>                        
                       </tr>
                       <tr>
-                        <td>Soumissionnaires: <strong><?= $projets['nb_pigistes']; ?></strong>
+                        <td>Soumissionnaires: <strong><?= !empty($soumission['comptage']) ? $soumission['comptage'] : 0; ?></strong>
                           <br>
-                          Budget de <strong><?= $projets['budget_indicatif_prj']; ?> $</strong></td>
+                          Budget de <strong><?= $soumission['budget_indicatif_prj']; ?> $</strong></td>
                         <td style="text-align:right">État du contrat : <span class="contrat-ouvert">OUVERT</span></td>
                       </tr>
                       <tr>
@@ -67,38 +79,38 @@
                                     </a>
                                   </h5>
                                 </div>
-                                
+                                <?php
+                                // $soum = new SoumissionModel()
+                                // $soumissions = $soum->getSoumissionsParProjet($soumission['id_prj']);
+                                // foreach(){};
+                                ?>
                                 <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTWO" data-parent="#accordion2">
-                                  <!--LA BOUCLE COMMENCE PAR ICI (bouclez les tables)-->
-                                  <?php foreach($pigistes as $pigiste): ?>
                                   <table class="table tab-index">
                                     <tbody>
+                                    <?php endif; ?>
                                       <tr style="border:none">
-                                        <th class="tab-titre" style="border:none"><a href="#"><?= $pigiste['prenom_ut'].' '.$pigiste['nom_ut']; ?></a></th>
-                                          <td><?= $pigiste['titre_profil_ut']; ?></td>
+                                        <th class="tab-titre" style="border:none"><a href="#"><?= $soumission['prenom_ut'].' '.$soumission['nom_ut']; ?></a></th>
+                                          <td><?= $soumission['titre_profil_ut']; ?></td>
                                           <td style="text-align:right">
                                               <button type="submit" id="detail" class="btn-crud" data-toggle="modal" data-target="#ModalDetail">
-                                                  <a href="<?php echo ROOT_URL; ?>user/profil/"<?=$pigiste['id_ut'] ?>>detail</a>
+                                                  <a href="<?php echo ROOT_URL; ?>user/profil/"<?=$soumission['id_ut'] ?>>detail</a>
                                               </button>
                                               <button type="submit" id="choisir" class="btn-crud-add">
                                                   <a href="#">Choisir ce candidat</a>
                                               </button>
                                           </td>
                                       </tr>
+                  <?php $old_id_soumission = $soumission['id_prj']; ?>
+                 <?php endforeach; ?>
                                     </tbody>
                                   </table>
-                                
-                                  <!--LA BOUCLE SE TERMINE ICI-->
-                                    <?php endforeach; ?>
                                 </div>
-                                
                             </div>
                         </td>
                       </tr>
+                     
                     </tbody>
                   </table>
-                  <!--LA BOUCLE SE TERMINE ICI-->
-                 <?php endforeach; ?>
                 </div>
                 
             </div>

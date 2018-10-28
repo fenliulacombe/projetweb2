@@ -17,7 +17,8 @@ class User extends Controller{
 
     protected function profil(){
         $viewmodel = new UserModel();
-        $this->returnView(array('userprofil'=> $viewmodel->getUser($_SESSION['user_data']['id'])),true);
+        $projects = new ContractModel();
+        $this->returnView(array('userprofil'=> $viewmodel->getUser($_SESSION['user_data']['id']),'projects'=>$projects->getContractsByProvider($_SESSION['user_data']['id'])),true);
     }
     
 
