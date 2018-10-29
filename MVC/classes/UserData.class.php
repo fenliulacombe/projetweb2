@@ -26,13 +26,14 @@ class UserData extends Entite {
     private $id_secteur_ut = null;
     private $id_type_etse_ut = null;
     private $id_ville_ut = null;
+    private $titre_profil_ut = null;
     /*
      * Le constructeur de 
      */
  
     
-    public function getPseudo(){
-        return $this->pseudo_ut;
+    public function getProfil(){
+        return $this->titre_profil_ut;
     }
 
     public function getNom(){
@@ -115,11 +116,11 @@ class UserData extends Entite {
      * Mutateur de la propriété pseudo_ut 
      * @return 
      */    
-    public function setPseudo_ut($pseudo_ut = null) {
-        if(empty($pseudo_ut)){
-            $this->errorsHydrate['Pseudo'] = "Veuillez saisir votre pseudo.";
+    public function setTitre_profil_ut($titre_profil_ut= null) {
+        if(empty($titre_profil_ut)){
+            $this->errorsHydrate['Titre Profil'] = "Veuillez saisir votre titre profil.";
         }
-        $this->pseudo_ut=trim($pseudo_ut);
+        $this->titre_profil_ut=trim($titre_profil_ut);
     }
     
     /**

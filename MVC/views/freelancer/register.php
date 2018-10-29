@@ -4,10 +4,6 @@
         <div class="col-sm-4">
         <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
           <div class="form-group">
-            <label for="pseudo_ut">Pseudo *</label>
-            <input type="text" class="form-control" name="pseudo_ut" value=<?php echo isset($_POST['pseudo_ut'])?$_POST['pseudo_ut']:'' ?>>
-          </div>
-          <div class="form-group">
             <label for="courriel_ut">Courriel professionnel *</label>
             <input type="email" class="form-control" name="courriel_ut" placeholder="name@example.com" value=<?php echo isset($_POST['courriel_ut'])?$_POST['courriel_ut']:'' ?>>
           </div>
@@ -67,7 +63,7 @@
           </div>
           <div class="form-group">
             <label for="competence_ut">Compétences *</label>
-            <textarea class="form-control" name="competence_ut" id="competence_ut" rows="3" ></textarea>
+            <textarea class="form-control" name="competence_ut" id="competence_ut" rows="3" ><?php echo isset($_POST['competence_ut'])?$_POST['competence_ut']:'' ?></textarea>
           </div>
           <div class="form-group">
             <label for="taux_horaire_ut">Taux horaire *</label>

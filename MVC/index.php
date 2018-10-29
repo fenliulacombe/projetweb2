@@ -15,7 +15,7 @@
    require ('controllers/user.php');
    require ('controllers/freelancer.php');
    require ('controllers/provider.php');
-   require ('controllers/admin.php');
+ 
 
 
    require ('models/homeModel.php');
@@ -23,7 +23,7 @@
    require ('models/userModel.php');
    require ('models/freelancerModel.php');
    require ('models/providerModel.php');
-   require ('models/adminModel.php');
+   
 
 
    $main = new Main($_GET);// le Get est transmis par le fichier .htaccess

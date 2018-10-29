@@ -116,11 +116,11 @@ foreach ($projects as $soumission): ?>
             </div>
 
             </div>
-        </div>
+       
     </div>
 
 
-</div>
+
 
 <!-- ModalDetail Freelancer -->
 <div class="container" id="pigiste">
@@ -166,4 +166,6 @@ foreach ($projects as $soumission): ?>
       </div>
       <?php endif;?>
       <?php endforeach;?>
+</div>
+</div>
 </div>

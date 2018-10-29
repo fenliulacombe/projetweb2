@@ -15,8 +15,8 @@ class UserModel extends Model{
             $user = new UserData();
             
             $erreurs = $user->hydrate($post);
-            //var_dump($user);
-            //var_dump($erreurs);
+            var_dump($user);
+            var_dump($erreurs);
             if (count($erreurs) > 0)
             {
                 $msg = '';
@@ -30,7 +30,7 @@ class UserModel extends Model{
                 // var_dump( $user);
             //die('SUBMITED'); //Print a message and exit the current script:
             //insert into Mysql 
-                $this->query("INSERT INTO `utilisateur` (`nom_ut`, `prenom_ut`, `nom_entreprise_ut`, `numero_entreprise_ut`, `adresse_ut`, `telephone_ut`, `courriel_ut`, `site_web_ut`, `lien_facebook_ut`, `lien_linkedin_ut`,`mdp_ut`, `competence_ut`, `taux_horaire_ut`, `annee_experience_ut`, `disponibilite_ut`, `situation_pro_ut`, `apropos_ut`, `neq_ut`, `id_role_ut`, `id_secteur_ut`, `id_type_etse_ut`, `id_ville_ut`) VALUES (:nom_ut,:prenom_ut,:nom_entreprise_ut,:numero_entreprise_ut,:adresse_ut, :telephone_ut, :courriel_ut, :site_web_ut, :lien_facebook_ut, :lien_linkedin_ut, :mdp_ut, :competence_ut, :taux_horaire_ut, :annee_experience_ut, :disponibilite_ut, :situation_pro_ut, :apropos_ut, :neq_ut, :id_role_ut, :id_secteur_ut, :id_type_etse_ut, :id_ville_ut)");
+                $this->query("INSERT INTO `utilisateur` (`nom_ut`, `prenom_ut`, `nom_entreprise_ut`, `numero_entreprise_ut`, `adresse_ut`, `telephone_ut`, `courriel_ut`, `site_web_ut`, `lien_facebook_ut`, `lien_linkedin_ut`,`mdp_ut`, `competence_ut`, `taux_horaire_ut`, `annee_experience_ut`, `disponibilite_ut`, `situation_pro_ut`, `apropos_ut`, `neq_ut`, `titre_profil_ut`, `id_role_ut`, `id_secteur_ut`, `id_type_etse_ut`, `id_ville_ut`) VALUES (:nom_ut,:prenom_ut,:nom_entreprise_ut,:numero_entreprise_ut,:adresse_ut, :telephone_ut, :courriel_ut, :site_web_ut, :lien_facebook_ut, :lien_linkedin_ut, :mdp_ut, :competence_ut, :taux_horaire_ut, :annee_experience_ut, :disponibilite_ut, :situation_pro_ut, :apropos_ut, :neq_ut, :titre_profil_ut, :id_role_ut, :id_secteur_ut, :id_type_etse_ut, :id_ville_ut)");
                 $this->bind(':nom_ut', $user->getNom());
                 $this->bind(':prenom_ut', $user->getPrenom());
                 $this->bind(':nom_entreprise_ut', $user->getNomEntreprise());
@@ -49,11 +49,13 @@ class UserModel extends Model{
                 $this->bind(':situation_pro_ut', $user->getSituationPro());
                 $this->bind(':apropos_ut', $user->getApropos());
                 $this->bind(':neq_ut', $user->getNeq());
+                $this->bind(':titre_profil_ut', $user->getProfil());
                 $this->bind(':id_role_ut', $role, PDO::PARAM_INT);
                 $this->bind(':id_secteur_ut', $user->getIdSecteur(), PDO::PARAM_INT);
                 $this->bind(':id_type_etse_ut', $user->getIdTypeEtse(), PDO::PARAM_INT);
                 $this->bind(':id_ville_ut',$user->getIdVille(), PDO::PARAM_INT);
                 $res = $this->execute();
+                var_dump($res);
                 //var_dump($res);
             // }
             // catch(Exception $e){

@@ -15,6 +15,7 @@
             
             <li class="li-m"><a href="<?php echo ROOT_URL; ?>user/profil">Mon Profil</a></li>
             <li class="li-m"><a href="<?php echo ROOT_URL; ?>user/logout">Logout</a></li>
+            
             <?php else : ?>
             <li class="li-m"><a class="dropdown-toggle" data-toggle="dropdown" href="#">S'inscrire</a>
                   <div class="dropdown-menu">
