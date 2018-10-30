@@ -2,7 +2,7 @@
 //require_once("./index.php");
 
 
-class submission {
+class Submission {
 
    
     private $id_prj_soum = NULL;

@@ -2,7 +2,7 @@
 //require_once("./index.php");
 
 
-class message {
+class Message {
 
    
     private $message_msg = NULL;
