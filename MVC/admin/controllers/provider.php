@@ -1,17 +1,24 @@
 <?php
 class Provider extends Controller{
+    protected function index(){
+        $viewmodel = new FreelancerModel();
+        $this->returnView(array('providers'=>$viewmodel->index()),true);
+    }
+
     protected function validate(){
         $viewmodel = new ProviderModel();
-        $this->returnView(array('viewmodel'=>$viewmodel->index()),true);
+        $viewmodel->validate($_GET['id'], $_POST['valeur_validation']);
     }
 
     protected function delete(){
         $viewmodel = new ProviderModel();
-        $this->returnView(array('viewmodel'=>$viewmodel->delete()),true);
+        $viewmodel->delete($_GET['id']);
+        header("Location: ". ROOT_ADMIN ."provider/");
+        exit();
     }
 
-    protected function suspend(){
+    protected function suspension(){
         $viewmodel = new ProviderModel();
-        $this->returnView(array('viewmodel'=>$viewmodel->suspend()),true);
+        $viewmodel->suspension($_GET['id'], $_POST['valeur_suspension']);
     }
 }

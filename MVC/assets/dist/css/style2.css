@@ -1,0 +1,613 @@
+/*!
+ * MY STYLE IMANE
+ * Copyright 2018
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+/***
+ *  Simple Pure CSS Star Rating Widget Bootstrap 4 
+ * 
+ *  www.TheMastercut.co
+ *  
+ ***/
+
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+/* Styling h1 and links
+––––––––––––––––––––––––––––––––– */
+a:focus {
+    text-decoration: none;
+}
+
+.red {
+    color: red;
+}
+
+.small {
+    font-size: .9rem;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.starrating > input {display: none;}  /* Remove radio buttons */
+
+.starrating > label:before { 
+  content: "\f005"; /* Star */
+  margin: 2px;
+  font-size: 1.3em;
+  font-family: FontAwesome;
+  display: inline-block; 
+}
+
+.starrating > label
+{
+  color: #222222; /* Start color when not clicked */
+}
+
+.starrating > input:checked ~ label
+{ color: #efc500 ; } /* Set yellow color when star checked */
+
+.starrating > input:hover ~ label
+{ color: #efc500 ;  } /* Set yellow color when star hover */
+
+
+/*STYLE YANNA*/
+.nav li:last-child {
+    border-right: 0;
+}
+
+.table a {
+    color: #36c1d2;
+}
+
+.table a:hover {
+    text-decoration: none;
+}
+
+aside a:hover {
+    text-decoration: none;
+} 
+
+.tab-index {
+    border: 1px solid #eceeef !important;
+}
+/*FIN STYLE YANNA*/
+
+/* Styling page pigiste liste
+––––––––––––––––––––––––––––––––– */
+#pigiste h3 {
+    font-size: 1.8em;
+    padding: 20px 0;
+}
+
+#pigiste h5 {
+    font-size: 1.2rem;
+    margin-bottom: 3px;
+    color: #36c1d2;
+    font-family: Garamond-regular;
+    font-weight: bold;
+}
+
+#pigiste h6 {
+    font-size: 0.8em;
+    color: #000;
+}
+
+#pigiste .card {
+    width: 20%;
+    margin: 0 28px;
+    position:relative;
+    text-align: center;
+    line-height: 18px;
+    font-size: 0.9em;
+}
+
+#pigiste .image {
+    position: relative;
+}
+
+#pigiste .overlay {
+    
+}
+
+#pigiste .image:hover > .overlay{
+    width:100%;
+    height:100%;
+    top: 0;
+    position:absolute;
+    background:radial-gradient(#fff, #36c1d2);
+    opacity:0.2;
+    /*transition-duration: 3s;*/
+    cursor: pointer;
+}
+
+#pigiste .ville {
+    float: left;
+}
+
+#pigiste .rate {
+    float: right;
+}
+
+#pigiste .rate .fa-star {
+    color: #efc500;
+}
+
+#pigiste .taux {
+    font-size: 1.5em;
+    padding-top: 14px;
+    display: block;
+}
+
+/*#pigiste .taux .fa-dollar-sign {
+    color: #36c1d2;
+}*/
+
+#content-pigiste .card {
+    display: inline-block;
+    width: 21.4%;
+    margin: 10px 13px !important;
+    position: relative;
+    text-align: center;
+    line-height: 18px;
+    font-size: 0.9em;
+}
+
+#content-pigiste .fa-star {
+    color: #999 !important;
+}
+
+#content-pigiste .ville, #content-pigiste .rate {
+    font-size: 0.8rem;
+}
+
+#content-pigiste .taux {
+    font-size: 1.2rem;
+}
+
+#content-pigiste {
+    margin-top: 70px;
+}
+
+#content-pigiste nav {
+    margin-top: 20px;
+}
+
+#content-pigiste nav li {
+    box-shadow: 2px 2px 4px #E3E3E3;
+}
+
+.page-item.active .page-link {
+    background-color: #36c1d2;
+    border-color: #36c1d2;
+}
+
+.page-link {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+/* Styling Filtrer par pigistes
+––––––––––––––––––––––––––––––––– */
+#pigiste .filtrer {
+    background-color: #F7F7F7;
+    padding: 20px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    margin-top: 10px;
+}
+
+#pigiste .filtrer h4 {
+    height: 40px;
+    font-size: 1.3rem;
+}
+
+#pigiste .btn-primary {
+    /*color: #fff;*/
+    background-color: #36c1d2;
+    border-color: #36c1d2;
+}
+#pigiste .btn-primary:hover {
+    background-color: #0094BC;
+}
+
+
+/* Styling Recherche
+––––––––––––––––––––––––––––––––– */
+#recherche_pigiste {
+    margin: 60px 0;
+}
+
+#recherche_pigiste h2 {
+    font-size: 1.5rem;
+}
+
+#recherche_pigiste .form-banniere {
+    max-width: none;
+    box-shadow: 2px 2px 4px #E3E3E3;
+}
+
+
+/* Styling Page detail_prestataire
+––––––––––––––––––––––––––––––––– */
+#detail {
+    margin-top: -175px;
+    position: relative;
+    z-index: 2;
+}
+
+#detail .card {
+    background-color: #F7F7F7;
+    padding: 20px 20px 0 20px;
+    /*color: #000;*/
+    font-size: 0.9rem;
+    line-height: 35px;
+}
+
+#detail .detail {
+    /*border-left: 1px solid #36c1d2;*/
+    padding-left: 20px;
+    margin: 40px 0;
+}
+
+#detail .fas, #detail .far {
+    color: #36c1d2;
+    width: 30px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+#detail .best-rate {
+    margin-top: 40px;
+    background-color: #efc500;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 0;
+    width: 80%;
+}
+
+#detail .best-rate .fas {
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+#detail h4 {
+    color: #36c1d2;
+    font-family: Garamond-regular;
+    font-size: 2rem;
+}
+
+#detail .dispo .fas {
+    color: #69AF22;
+    font-size: .6rem;
+    text-align: left;
+    width: inherit;
+}
+
+#vote-msg .card {
+    padding: 20px;
+    margin: 40px 0;
+}
+
+#evaluations {
+    margin-top: 60px;
+    border: 1px solid #eceeef;
+    padding: 20px;
+}
+
+#evaluations h5 {
+    height: 40px;
+}
+
+#evaluations tbody {
+    border: 1px solid #eceeef;
+    margin-bottom: 20px;
+    display: block;
+}
+
+#evaluations .name {
+    text-align: right;
+    font-weight: bold;
+}
+
+#evaluations .fas {
+    width: inherit;
+    color: #efc500;
+}
+
+#detail .btn-primary {
+    background-color: #36c1d2;
+    border-color: #36c1d2;
+}
+
+#detail .btn-primary:hover {
+    background-color: #0094BC;
+}
+
+.bandeau {
+    background-color: #F7F7F7;
+    height: 225px;
+    position: relative;
+    top: 3px;
+}
+
+
+/* Styling Page fournisseur/publier contrat
+––––––––––––––––––––––––––––––––– */
+#publier {
+    margin-top: 40px;
+}
+
+.formulaire {
+    border: 1px solid #eceeef;
+    padding: 20px;
+}
+
+#publier .card {
+    padding: 20px;
+    margin-bottom: 40px;
+    background-color: #F7F7F7;
+}
+
+#publier .btn-primary {
+    background-color: #36c1d2;
+    border-color: #36c1d2;
+}
+
+#publier .btn-primary:hover {
+    background-color: #0094BC;
+    border: 1px solid #0094BC;
+}
+
+#publier h3 {
+    height: 50px;
+}
+
+#publier h5, .details-box h5 {
+    height: 27px;
+    font-size: 1rem;
+    border-bottom: 1px solid #eceeef;
+    margin-bottom: 20px;
+}
+
+#publier .card a, .details-box a {
+    color: #36c1d2;
+}
+
+#publier .card a:hover, .details-box a:hover {
+    text-decoration: none;
+    color: #efc500;
+}
+
+#accordion a {
+    font-size: 1rem;
+    color: #36c1d2;
+}
+
+#accordion a:hover {
+    color: #efc500;
+    text-decoration: none;
+}
+
+#headingOne {
+    border-bottom: 0;
+    height: 40px;
+    background-color: #F7F7F7;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+/*PROFIL UPLOAD*/
+#pic {
+    position: relative;
+    height: 140px;
+}
+
+.profile-pic {
+    max-width: 200px;
+    max-height: 200px;
+    display: block;
+}
+
+.file-upload {
+    display: none;
+}
+.carre {
+    overflow: hidden;
+    width: 128px;
+    height: 128px;
+    border: 5px solid #eceeef;
+    position: absolute;
+    top: 0;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.p-image {
+  position: absolute;
+  top: 115px;
+  left: 115px;
+  color: #666666;
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+}
+.p-image:hover {
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+}
+.upload-button {
+  font-size: 1.2em;
+}
+
+.upload-button:hover {
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+  color: #999;
+}
+
+/*SELECT MULTIPLE*/
+.chosen-container {
+    display: block;
+    width: 100%;
+    padding: .5rem .75rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #464a4c;
+    background-color: #fff;
+    background-image: none;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+}
+
+.chosen-choices {
+    border: 0 !important;
+    background: none !important;
+}
+
+.chosen-container-active .chosen-choices {
+    box-shadow: none !important;
+}
+
+
+/* Styling Filtrer par contrats
+––––––––––––––––––––––––––––––––– */
+#contrats .filtrer {
+    background-color: #F7F7F7;
+    padding: 20px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+#contrats .filtrer h4 {
+    height: 40px;
+    font-size: 1.3rem;
+}
+
+#contrats .btn-primary {
+    /*color: #fff;*/
+    background-color: #36c1d2;
+    border-color: #36c1d2;
+}
+#contrats .btn-primary:hover {
+    background-color: #0094BC;
+}
+
+
+
+/* Styling Page profil
+––––––––––––––––––––––––––––––––– */
+#profil .pic-profil {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 0px;
+    box-sizing: border-box;
+    border: 3px solid #fff;
+    border-radius: 3px;
+}
+
+#profil {
+    margin-top: -125px;
+    position: relative;
+    z-index: 2;
+}
+
+#profil .card {
+    background-color: #F7F7F7;
+    padding: 20px 20px 0 20px;
+    /*color: #000;*/
+    font-size: 0.9rem;
+    line-height: 35px;
+}
+
+#profil .detail {
+    /*border-left: 1px solid #36c1d2;*/
+    padding-top: 10px;
+}
+
+#profil .detail-infos {
+    padding-top: 35px;
+}
+
+#profil .info-plus {
+    padding-top: 50px;
+}
+
+#profil .icon-update .fas {
+    font-size: 1.6rem;
+    color: #ccc;
+    float: right;
+    margin-top: 7px;
+}
+
+#profil .fas, #profil .far {
+    color: #36c1d2;
+    width: 30px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+#profil .best-rate {
+    margin-top: 40px;
+    background-color: #efc500;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 0;
+    width: 80%;
+}
+
+#profil .best-rate .fas {
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+#profil h4 {
+    color: #36c1d2;
+    font-family: Garamond-regular;
+    font-size: 2rem;
+}
+
+#profil #collapseOne tbody, #profil #collapseTwo tbody {
+    border: 1px solid #eceeef;
+    margin-bottom: 20px;
+    display: inherit;
+    width: 100%;
+}
+
+#profil #collapseTwo .name {
+    text-align: right;
+    font-weight: bold;
+}
+
+#profil #collapseTwo .fas {
+    width: inherit;
+    color: #efc500;
+}
+
+#profil #collapseOne, #profil #collapseTwo {
+    border: 1px solid #eceeef;
+    padding: 20px;
+}
+
+#profil #headingOne .fas {
+    color: inherit !important;
+}
+
+
+#profil .pic-profil .icon-update .fas {
+    float: right;
+    margin-right: -18px;
+    margin-top: -12px;
+    z-index: 2;
+    position: relative;
+}
+
+

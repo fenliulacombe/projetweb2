@@ -1,13 +1,16 @@
 
-<div id="profil">
-    <!--A PROPOS PIGISTE-->
+<div class="container" id="profil">
+
+   <?php if ($_SESSION['user_data']['id_role'] == '2'): ?>
+    <!--A PROPOS fourisseur-->
+   
     <div class="row">
-        <div class="col">
-            <div class="row">
+      <div class="col">
+        <div class="row">
                 <div class="col-sm-6">
                     <div class="detail-ese">
-                        <h4><?=$userprofil['nom_entreprise_ut'];?></h4>
-                        <h5><?=$userprofil['prenom_ut'] . ' ' . $userprofil['nom_ut'];?></h5>
+                        <h4><?= $userprofil['nom_entreprise_ut']; ?></h4>
+                        <h5><?= $userprofil['prenom_ut'] . ' ' . $userprofil['nom_ut']; ?></h5>
                         <div></div>
                     </div>
                 </div>
@@ -36,7 +39,7 @@
 
                   <!--LA BOUCLE COMMENCE PAR ICI-->
                   <?php $old_id_soumission = '';
-foreach ($projects as $soumission): ?>
+                    foreach ($projects as $soumission): ?>
                     <?php if ($soumission['id_prj'] != $old_id_soumission): ?>
                     <?php if ($old_id_soumission != ''): ?>
                                     </tbody>
@@ -66,7 +69,7 @@ foreach ($projects as $soumission): ?>
                       <tr>
                         <td>Soumissionnaires: <strong><?=!empty($soumission['comptage']) ? $soumission['comptage'] : 0;?></strong>
                           <br>
-                          Budget de <strong><?=$soumission['budget_indicatif_prj'];?> $</strong></td>
+                          Budget: <strong><?=$soumission['budget_indicatif_prj'];?> $</strong></td>
                         <td style="text-align:right">État du contrat : <span class="contrat-ouvert">OUVERT</span></td>
                       </tr>
                       <tr>
@@ -80,10 +83,10 @@ foreach ($projects as $soumission): ?>
                                   </h5>
                                 </div>
                                 <?php
-// $soum = new SoumissionModel()
-// $soumissions = $soum->getSoumissionsParProjet($soumission['id_prj']);
-// foreach(){};
-?>
+                              // $soum = new SoumissionModel()
+                              // $soumissions = $soum->getSoumissionsParProjet($soumission['id_prj']);
+                              // foreach(){};
+                              ?>
                                 <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTWO" data-parent="#accordion2">
                                   <table class="table tab-index">
                                     <tbody>
@@ -100,28 +103,20 @@ foreach ($projects as $soumission): ?>
                                               </button>
                                           </td>
                                       </tr>
-                  <?php $old_id_soumission = $soumission['id_prj'];?>
-                 <?php endforeach;?>
+                                      <?php $old_id_soumission = $soumission['id_prj'];?>
+                                    <?php endforeach;?>
                                     </tbody>
                                   </table>
                                 </div>
                             </div>
                         </td>
                       </tr>
-
                     </tbody>
                   </table>
                 </div>
-
             </div>
-
-            </div>
-       
+          </div>
     </div>
-
-
-
-
 <!-- ModalDetail Freelancer -->
 <div class="container" id="pigiste">
 <?php foreach ($projects as $soumission): ?>
@@ -156,7 +151,6 @@ foreach ($projects as $soumission): ?>
                 <h5>Années d'experience</h5>
                 <div><i class="fas fa-graduation-cap"></i><?=$soumission['annee_experience_ut'];?> ans</div>
             </div>
-
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -168,4 +162,108 @@ foreach ($projects as $soumission): ?>
       <?php endforeach;?>
 </div>
 </div>
+
+<?php elseif ($_SESSION['user_data']['id_role'] == '3'): ?>
+  <!--A PROPOS pigiste-->
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="pic-profil .card">
+              <div class="image"><img class="card-img-top" src="/echange/view/images/profil.jpg" alt="Card image"><div class="icon-update"><a href="#"><i class="fas fa-pen-square"></i></a></div></div>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="col-sm-9">
+                    <div class="detail">
+                        <h4><?= $userprofil['prenom_ut'] . ' ' . $userprofil['nom_ut']; ?></h4>
+                        <h5><?= $userprofil['nom_secteur']; ?></h5>
+                        <div><?= $userprofil['competence_ut']; ?></div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="detail-infos">
+                        <div class="ville"><i class="fas fa-map-marker-alt"></i><?= $userprofil['nom_ville']; ?></div>
+                        <div class="rate" title="Nombre de vote"><i class="far fa-calendar-check"></i><?= $userprofil['NBREVAL']; ?></div>
+                        <div class="taux"><i class="fas fa-dollar-sign"></i><?= $userprofil['taux_horaire_ut']; ?>/h</div>
+                    </div>
+                    <div class="icon-update"><a href="#"><i class="fas fa-pen-square"></i></a></div>
+                </div>
+            </div>
+            <div class="info-plus">
+                <h5>A propos</h5>
+                <div><?= $userprofil['apropos_ut']; ?></div>
+            <div class="info-plus">
+                <h5>Compétences</h5>
+                <ul>
+                    <li><div><?= $userprofil['competence_ut'];  ?></div></li>
+                </ul>
+            </div>
+
+            <div id="accordion" role="tablist">
+                <div role="tab" id="headingOne">
+                  <h5 class="mb-0">
+                    <a data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                      <i class="fas fa-chevron-circle-right"></i> Vos Contrat soumissionnés
+                    </a>
+                  </h5>
+                </div> 
+                <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+                <?php foreach ($projects as $soumission):  ?>
+                  <table class="table tab-index">
+                    <tbody>
+                      <tr style="border:none">
+                        <th class="tab-titre" style="border:none"><a href="view/fournisseur/detail_contrats.php"><?=$soumission['titre_prj']?></a></th>
+                        <?php if ($soumission['etat_soum'] == 0):  ?>
+                        <th style="text-align:right"><span class="btn-etat">En attente de validation</span></th>
+                        <?php elseif ($soumission['etat_soum'] == 1):  ?>
+                        <th style="text-align:right"><span class="btn-etat">projet attribué</span></th>
+                        <?php endif;  ?>
+                      </tr>
+                      <tr>
+                        <td>Soumissionnaires: <strong><?=!empty($soumission['comptage']) ? $soumission['comptage'] : 0;?></strong>
+                          <br>
+                          Budget: <strong><?=$soumission['budget_indicatif_prj'];?> $</strong></td>
+                        <?php if ($soumission['etat_soumis'] == 0) { ?>
+                          <td style="text-align:right">État du contrat : <span class="contrat-ouvert">OUVERT</span></td>
+                          <?php } elseif ($soumission['etat_soumis'] == 1) { ?>
+                          <td style="text-align:right">État du contrat : <span class="contrat-ferme">FERME</span></td>
+                        <?php } ?> 
+                      </tr>
+                    </tbody>
+                  </table>
+                  <?php endforeach; ?>   
+                </div>
+            </div>
+            <div id="accordion" role="tablist">
+                <div role="tab" id="headingOne">
+                  <h5 class="mb-0">
+                    <a data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseOne">
+                      <i class="fas fa-chevron-circle-right"></i> Evaluations <i class="fas fa-star"></i> <?= $freelancer['moyenne'] ?>/5
+                    </a>
+                  </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+                  <table class="table">
+                   <?php foreach($evaluateur as $single): ?>
+
+                    <tbody>
+                    <th><?php for($i=1;$i<=$single['note_eval'];$i++): ?><i class="fas fa-star"></i><?php endfor; ?></th>
+                      <tr>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></th>
+                        <th style="text-align:right;"><?= $single['date_eval'] ?></th>
+                      </tr>
+                      <tr>
+                        <td colspan="2"><p><?= $single['commentaire_eval'] ?></p></td>
+                      </tr>
+                      <tr><td colspan="2" class="name"><?= $single['nom_ut']; ?></td></tr>
+                      </tbody>
+                      <?php endforeach;  ?>
+                  </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<?php endif; ?>
+
+

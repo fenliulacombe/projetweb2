@@ -22,4 +22,9 @@ class Contract extends Controller{
         $viewmodel = new ContractModel();
         $this->returnView(array('viewmodel'=>$viewmodel->updateContracts()),true); 
     }
+    
+    protected function detail(){
+        $viewmodel = new ContractModel();
+        $this->returnView(array('contract' =>$viewmodel->getContract($_GET['id']),'soumis'=>$viewmodel->getContractsByProject($_GET['id']),'usercontract'=>$viewmodel->getUserContract($_GET['id'])),true); 
+    }
 }

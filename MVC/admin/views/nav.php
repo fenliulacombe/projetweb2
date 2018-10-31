@@ -2,6 +2,10 @@
 <!-- ///////////////////// MENU TOP ///////////////////// -->
 <!-- //////////////////////////////////////////////////// -->    
 
+<body>
+
+    <div id="wrapper">
+
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
         
@@ -14,7 +18,7 @@
                 </button>
                 
                 <!-- LOGO -->
-                <a class="navbar-brand" href="index.php"><img src="../images/logo.svg" alt="logo" height="50px"/></a>
+                <a class="navbar-brand" href="index.php"><img src="<?= ROOT_URL ?>assets/images/logo.svg" alt="logo" height="50px"/></a>
             </div>
             <!-- /.navbar-header -->
 
@@ -78,8 +82,6 @@
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
                         <li class="divider"></li>
                         <li><a href="../index.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
@@ -112,12 +114,12 @@
                         </li>
                         
                         <li>
-                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i>
+                            <a href="<?= ROOT_ADMIN ?>home"><i class="fa fa-dashboard fa-fw"></i>
                             <strong>Dashboard</strong></a>
                         </li>
                         
                         <li>
-                            <a href="inbox.php"><i class="fa fa-envelope-o fa-fw"></i> </i>
+                            <a href="<?= ROOT_ADMIN ?>messagerie"><i class="fa fa-envelope-o fa-fw"></i> </i>
                             <strong>Messagerie<span class="fa arrow"></strong></a>
                             
                       <ul class="nav nav-second-level">
@@ -132,37 +134,36 @@
                           </li>
                           
                       </ul>
-                              
-                            
+                                  
                         </li>
 
                         <li>
-                            <a href="pigistes.php"><i class="fa fa-files-o fa-fw"></i>
+                            <a  href="<?= ROOT_ADMIN ?>freelancer"><i class="fa fa-files-o fa-fw"></i>
                             <strong>Pigistes</strong></a>
                         </li>
                         
                          <li>
-                            <a href="fournisseurs.php"><i class="fa fa-files-o fa-fw"></i>
+                            <a href="<?= ROOT_ADMIN ?>provider"><i class="fa fa-files-o fa-fw"></i>
                             <strong>Fournisseurs</strong></a>
                         </li>
                         
                         <li>
-                            <a href="administrateurs.php"><i class="fa fa-files-o fa-fw"></i>
+                            <a href="<?= ROOT_ADMIN ?>administrator"><i class="fa fa-files-o fa-fw"></i>
                             <strong>Administrateurs</strong></a>
                         </li>
                         
                         <li>
-                            <a href="secteurs.php"><i class="fa fa-files-o fa-fw"></i>
+                            <a href="<?= ROOT_ADMIN ?>sector"><i class="fa fa-files-o fa-fw"></i>
                             <strong>Secteurs</strong></a>
                         </li>
                         
                         <li>
-                            <a href="competences.php"><i class="fa fa-files-o fa-fw"></i>
+                            <a href="<?= ROOT_ADMIN ?>competence"><i class="fa fa-files-o fa-fw"></i>
                             <strong>Compétences</strong></a>
                         </li>
                         
                         <li>
-                            <a href="contrats.php"><i class="fa fa-files-o fa-fw"></i>
+                            <a href="<?= ROOT_ADMIN ?>contract"><i class="fa fa-files-o fa-fw"></i>
                             <strong>Contrats</strong></a>
                         </li>
   

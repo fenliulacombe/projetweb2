@@ -1,26 +1,30 @@
 <?php
-class Admin extends Controller{
+class Administrator extends Controller{
     /*lister tous les admins*/
     protected function index(){
         $viewmodel = new AdminModel();
-        $this->returnView(array('viewmodel'=>$viewmodel->index()),true);
+        $this->returnView(array('admins'=>$viewmodel->index()),true);
     }
 
     /*ajouter un admin*/
     protected function add(){
-        $viewmodel = new AdminModel();
-        $this->returnView(array('viewmodel'=>$viewmodel->add()),true);
+        $viewmodel = new AdminModel(); 
+        $viewmodel->addAdmin(1);
+        //$this->returnView(array(),true);
     }
 
     /*supprimer un admin*/
     protected function delete(){
         $viewmodel = new AdminModel();
-        $this->returnView(array('viewmodel'=>$viewmodel->delete()),true);
+        $viewmodel->delete($_GET['id']);
+        header("Location: ". ROOT_ADMIN ."administrator/");
+        exit();
     }
 
     /*modifier un admin*/
     protected function update(){
         $viewmodel = new AdminModel();
-        $this->returnView(array('viewmodel'=>$viewmodel->update()),true);
+        $viewmodel->update($_GET['id']);
+        $this->returnView(array('admin'=>$viewmodel->getAdmin($_GET['id'])),true);
     }
 }

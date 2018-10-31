@@ -18,7 +18,8 @@ class User extends Controller{
     protected function profil(){
         $viewmodel = new UserModel();
         $projects = new ContractModel();
-        $this->returnView(array('userprofil'=> $viewmodel->getUser($_SESSION['user_data']['id']),'projects'=>$projects->getContractsByProvider($_SESSION['user_data']['id'])),true);
+        $freelancer = new FreelancerModel();
+        $this->returnView(array('freelancer' =>$freelancer->getFreelancer($_SESSION['user_data']['id']),'userprofil'=> $viewmodel->getUser($_SESSION['user_data']['id']),  'evaluateur'=>$freelancer->getEvaluateurs($_SESSION['user_data']['id']), 'projects'=>$projects->getContractsByFreelancer($_SESSION['user_data']['id'])),true);
     }
     
 

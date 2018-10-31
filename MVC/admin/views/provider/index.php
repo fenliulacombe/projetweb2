@@ -1,32 +1,9 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-
-<?php include 'meta.php';?>
-    
-</head>
-
-<body>
-
-    <div id="wrapper">
-
-	<?php include 'nav.php';?>
 
 <!-- /////////////////////////////////////////////////////////// -->      
 <!-- ///////////////////// SECTION CONTAIN ///////////////////// -->
 <!-- /////////////////////////////////////////////////////////// -->  
 
         <div id="page-wrapper" style="padding-top:20px;height:auto !important">
-        
-
-
-			<!--<div class="row">
-                <div class="col-lg-12">
-                    <h3 class="page-header">Dashboard</h3>
-                </div>
-            </div>-->
-
             
         <div class="row">
 
@@ -44,315 +21,53 @@
                             
                 </div>
                         
-                <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                <thead>
-                                    <tr>
-                                        <th>Id</th>
-                                        <th>Nom</th>
-                                        <th>Dernière mise à jour</th>
-                                        <th>Valider</th>
-                                        <th>Suspendre</th>
-                                        <th>Supprimer</th>
-                                    </tr>
-                                </thead>
+             <!-- /.panel-heading -->
+             <div class="panel-body">
+                    <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nom</th>
+                                <th>Dernière mise à jour</th>
+                                <th>Valider/Suspendre</th>
+                                <th>Supprimer</th>
+                            </tr>
+                        </thead>
+                        <?php foreach ($providers AS $provider): ?>
+                        <tbody>
+                            <tr class="odd gradeA">
+                                <td><?php echo $provider['id_ut'] ?></td>
                                 
-                                <tbody>
-                                    <tr class="odd gradeA">
-                                        <td>1</td>
-                                        <td><a href="#">Pénélope Guiness</a></td>
-                                        <td>2018-04-25</td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="modifer" class="btn btn-jaune-mini">
-                                        <a href="#">Valider</a>
-                                        </button>
-                                        </td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="modifer" class="btn btn-turquoise-mini">
-                                        <a href="#">Suspendre</a>
-                                        </button>
-                                        </td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="supprimer" class="btn btn-rouge-mini">
-                                        <a href="#">
-                                            <span class="glyphicon glyphicon-remove" style="padding-right:1px;"></span>
-                                            Supprimer</a>
-                                        </button>
-                                        </td>
-                                    </tr>
-                                    
-                                    <tr class="odd gradeA">
-                                        <td>2</td>
-                                        <td><a href="#">Pénélope Guiness</a></td>
-                                        <td>2018-04-25</td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="modifer" class="btn btn-jaune-mini">
-                                        <a href="#">Valider</a>
-                                        </button>
-                                        </td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="modifer" class="btn btn-turquoise-mini">
-                                        <a href="#">Suspendre</a>
-                                        </button>
-                                        </td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="supprimer" class="btn btn-rouge-mini">
-                                        <a href="#">
-                                            <span class="glyphicon glyphicon-remove" style="padding-right:1px;"></span>
-                                            Supprimer</a>
-                                        </button>
-                                        </td>
-                                    </tr>
-                                    
-                                    <tr class="odd gradeA">
-                                        <td>3</td>
-                                        <td><a href="#">Pénélope Guiness</a></td>
-                                        <td>2018-04-25</td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="modifer" class="btn btn-jaune-mini">
-                                        <a href="#">Valider</a>
-                                        </button>
-                                        </td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="modifer" class="btn btn-turquoise-mini">
-                                        <a href="#">Suspendre</a>
-                                        </button>
-                                        </td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="supprimer" class="btn btn-rouge-mini">
-                                        <a href="#">
-                                            <span class="glyphicon glyphicon-remove" style="padding-right:1px;"></span>
-                                            Supprimer</a>
-                                        </button>
-                                        </td>
-                                    </tr>
-                                    
-                                    <tr class="odd gradeA">
-                                        <td>4</td>
-                                        <td><a href="#">Pénélope Guiness</a></td>
-                                        <td>2018-04-25</td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="modifer" class="btn btn-jaune-mini">
-                                        <a href="#">Valider</a>
-                                        </button>
-                                        </td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="modifer" class="btn btn-turquoise-mini">
-                                        <a href="#">Suspendre</a>
-                                        </button>
-                                        </td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="supprimer" class="btn btn-rouge-mini">
-                                        <a href="#">
-                                            <span class="glyphicon glyphicon-remove" style="padding-right:1px;"></span>
-                                            Supprimer</a>
-                                        </button>
-                                        </td>
-                                    </tr>
-                                    
-                                    <tr class="odd gradeA">
-                                        <td>5</td>
-                                        <td><a href="#">Pénélope Guiness</a></td>
-                                        <td>2018-04-25</td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="modifer" class="btn btn-jaune-mini">
-                                        <a href="#">Valider</a>
-                                        </button>
-                                        </td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="modifer" class="btn btn-turquoise-mini">
-                                        <a href="#">Suspendre</a>
-                                        </button>
-                                        </td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="supprimer" class="btn btn-rouge-mini">
-                                        <a href="#">
-                                            <span class="glyphicon glyphicon-remove" style="padding-right:1px;"></span>
-                                            Supprimer</a>
-                                        </button>
-                                        </td>
-                                    </tr>
-                                    
-                                    <tr class="odd gradeA">
-                                        <td>6</td>
-                                        <td><a href="#">Pénélope Guiness</a></td>
-                                        <td>2018-04-25</td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="modifer" class="btn btn-jaune-mini">
-                                        <a href="#">Valider</a>
-                                        </button>
-                                        </td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="modifer" class="btn btn-turquoise-mini">
-                                        <a href="#">Suspendre</a>
-                                        </button>
-                                        </td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="supprimer" class="btn btn-rouge-mini">
-                                        <a href="#">
-                                            <span class="glyphicon glyphicon-remove" style="padding-right:1px;"></span>
-                                            Supprimer</a>
-                                        </button>
-                                        </td>
-                                    </tr>
-                                    
-                                    <tr class="odd gradeA">
-                                        <td>7</td>
-                                        <td><a href="#">Pénélope Guiness</a></td>
-                                        <td>2018-04-25</td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="modifer" class="btn btn-jaune-mini">
-                                        <a href="#">Valider</a>
-                                        </button>
-                                        </td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="modifer" class="btn btn-turquoise-mini">
-                                        <a href="#">Suspendre</a>
-                                        </button>
-                                        </td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="supprimer" class="btn btn-rouge-mini">
-                                        <a href="#">
-                                            <span class="glyphicon glyphicon-remove" style="padding-right:1px;"></span>
-                                            Supprimer</a>
-                                        </button>
-                                        </td>
-                                    </tr>
-                                    
-                                    <tr class="odd gradeA">
-                                        <td>8</td>
-                                        <td><a href="#">Pénélope Guiness</a></td>
-                                        <td>2018-04-25</td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="modifer" class="btn btn-jaune-mini">
-                                        <a href="#">Valider</a>
-                                        </button>
-                                        </td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="modifer" class="btn btn-turquoise-mini">
-                                        <a href="#">Suspendre</a>
-                                        </button>
-                                        </td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="supprimer" class="btn btn-rouge-mini">
-                                        <a href="#">
-                                            <span class="glyphicon glyphicon-remove" style="padding-right:1px;"></span>
-                                            Supprimer</a>
-                                        </button>
-                                        </td>
-                                    </tr>
-                                    
-                                    <tr class="odd gradeA">
-                                        <td>9</td>
-                                        <td><a href="#">Pénélope Guiness</a></td>
-                                        <td>2018-04-25</td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="modifer" class="btn btn-jaune-mini">
-                                        <a href="#">Valider</a>
-                                        </button>
-                                        </td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="modifer" class="btn btn-turquoise-mini">
-                                        <a href="#">Suspendre</a>
-                                        </button>
-                                        </td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="supprimer" class="btn btn-rouge-mini">
-                                        <a href="#">
-                                            <span class="glyphicon glyphicon-remove" style="padding-right:1px;"></span>
-                                            Supprimer</a>
-                                        </button>
-                                        </td>
-                                    </tr>
-                                    
-                                    <tr class="odd gradeA">
-                                        <td>10</td>
-                                        <td><a href="#">Pénélope Guiness</a></td>
-                                        <td>2018-04-25</td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="modifer" class="btn btn-jaune-mini">
-                                        <a href="#">Valider</a>
-                                        </button>
-                                        </td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="modifer" class="btn btn-turquoise-mini">
-                                        <a href="#">Suspendre</a>
-                                        </button>
-                                        </td>
-                                        
-                                        <td class="center">
-                                        <button type="submit" id="supprimer" class="btn btn-rouge-mini">
-                                        <a href="#">
-                                            <span class="glyphicon glyphicon-remove" style="padding-right:1px;"></span>
-                                            Supprimer</a>
-                                        </button>
-                                        </td>
-                                    </tr>
-
-
-                              </tbody>
-                            </table>
-                          
-                            </div>
-                            <!-- /.table-responsive -->
-                        </div>
-                        <!-- /.panel-body -->
+                                <td><span id="modifer" class="btn-crud" data-toggle="modal" data-target="#<?= $provider['id_ut'] ?>" ><a href="javascript:void(0)"><?= $provider['nom_ut'].' '.$provider['prenom_ut'] ?></a></span></td>
+                                
+                                <td><?php //echo $provider['date_maj'] ?></td>
+                                
+                                <td class="center">
+                                <a href="<?= ROOT_ADMIN ?>provider/suspension/<?= $provider['id_ut'] ?>"><input type="checkbox" data-toggle="toggle" name="suspension_ut" data-on="Valider" data-off="Suspendre">
+                                </a></td>
+                                
+                                <td class="center">
+                                <button type="submit" id="supprimer" class="btn btn-rouge-mini" onclick="maSuppression()">
+                                <a href="#">
+                                    <span class="glyphicon glyphicon-remove" style="padding-right:1px;"></span>
+                                    Supprimer</a>
+                                </button>
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>   
+                            
+                        </tbody>
+                    </table>
+                    
                     </div>
-                    <!-- /.panel --> 
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-        
-        
-        
-        </div>
-        
+                    <!-- /.table-responsive -->
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel --> 
 
-        
-   
-            
+        </div>
+  
 
         </div>
         <!-- /#page-wrapper -->
@@ -360,22 +75,71 @@
     </div>
     <!-- /#wrapper -->
     
-    <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
+    
+    <!-- ModalDetail provider -->
+    <?php foreach ($providers AS $provider): ?>
+    <div class="container" id="pigiste">
+    <div class="modal fade" id="<?= $provider['id_ut'] ?>" role="dialog">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header detail">
+            <h4 class="modal-title"><?= $provider['nom_ut'].' '.$provider['prenom_ut'] ?></h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body detail-modal">
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+            <h5>A propos</h5>
+            <div><?= $provider['apropos_ut']?></div>
+            
+            <div class="detail-modal">
+                <h5>Compétences</h5>
+                <ul>
+                    <li><?= $provider['competence_ut']?></li>
+                </ul>
+            </div>
+            
+            <div class="detail-modal">
+                <h5>Taux horaire</h5>
+                <div><i class="fas fa-dollar-sign"></i> <?= $provider['taux_horaire_ut']?>/h</div>
+            </div>
+              
+            <div class="detail-modal">
+                <h5>Années d'experience</h5>
+                <div><i class="fas fa-graduation-cap"></i> <?= $provider['annee_experience_ut']?> ans</div>
+            </div>
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div> 
+    
+</div>
+    
+<?php endforeach; ?>
+    
+    
+ <!--ALERT SUPPRESSION  -->
+<script>
+function maSuppression() {
+    confirm("Êtes-vous sûr de vouloir supprimer?");
+}
+</script>
 
-    <!-- DataTables JavaScript -->
-    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
+ <!--SWITCH TOGGLE -->
+<script>
+  $(function() {
+    $('#toggle-two').bootstrapToggle({
+      on: 'Valider',
+      off: 'Suspendre'
+    });
+  })
+</script>
+    
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>

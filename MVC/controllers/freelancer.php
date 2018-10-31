@@ -3,7 +3,7 @@ class Freelancer extends Controller{
     protected function index(){
         $viewmodel = new FreelancerModel();
         $usermodel = new UserModel();
-        $tableau = array('freelancers' =>$viewmodel->getFreelancers(), 'topfreelancers'=>$viewmodel->getTopFreelancers(),'cities'=>$usermodel->getCities(),'sectors'=>$usermodel->getSectors());
+        $tableau = array('freelancers' =>$viewmodel->getFreelancers(), 'topfreelancers'=>$viewmodel->getTopFreelancers(),'cities'=>$usermodel->getCities(),'sectors'=>$usermodel->getSectors(),'countfreelancer'=>$usermodel->getTotalFreelancer());
         $this->returnView($tableau,true);
         //$this->returnView($viewmodel->getFreelancers(),true);
     }
@@ -17,7 +17,7 @@ class Freelancer extends Controller{
     {
         $viewmodel = new UserModel();
         $viewmodel->register(3);
-        $tableau = array('cities'=>$viewmodel->getCities(),'sectors'=>$viewmodel->getSectors(),'companytypes'=>$viewmodel->getCompanytypes());
+        $tableau = array('cities'=>$viewmodel->getCities(),'sectors'=>$viewmodel->getSectors(),'companytypes'=>$viewmodel->getCompanytypes(), 'competences'=>$viewmodel->getCompetences());
         $this->returnView($tableau,true);
     }
 

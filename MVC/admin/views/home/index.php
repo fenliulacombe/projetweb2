@@ -1,10 +1,16 @@
-  
-<div id="page-wrapper" style="padding-top:20px;height:auto !important">
 
- <div class="row">
+
+
+<!-- /////////////////////////////////////////////////////////// -->      
+<!-- ///////////////////// SECTION CONTAIN ///////////////////// -->
+<!-- /////////////////////////////////////////////////////////// -->  
+
+        <div id="page-wrapper" style="padding-top:20px;height:auto !important">
+        
+        <div class="row">
                
         <!--BOITE PROFIL-->
-     <div class="col-lg-4 col-md-4 col-xs-12 cont-card">
+        <div class="col-lg-4 col-md-4 col-xs-12 cont-card">
 
             <div class="col-12 card-index">
              <a href="#">
@@ -12,7 +18,7 @@
               </a>
                 <div class="col-12 card-body-index">
                 <h4 class="col-12 card-title-index">Tania Ferreira</h4>
-                </div>
+              </div>
               <div class="card-info"><p>30 octobre 2018<br>BIENVENUE EN LIGNE!</p></div>
             </div>
         
@@ -38,7 +44,7 @@
                     <div class="row">
                         <div class="col-xs-2 col-md-2 thumbnails" style="margin-left:20px">
                             <img src="../../images/portrait3.jpg" alt="id"></div>
-                        <div class="col-xs-10 col-md-10"><h4><a href="#">Congratulations</a></h4>
+                        <div class="col-xs-10 col-md-10"><h4><a href="inbox.php">Congratulations</a></h4>
                             <div class="mic-info">Par: <a href="#">Kevin Crud</a> le 12-04-2018 à 22:34</div>
                         </div>
                     </div>
@@ -48,7 +54,7 @@
                     <div class="row">
                         <div class="col-xs-2 col-md-2 thumbnails" style="margin-left:20px">
                             <img src="../../images/portrait4.jpg" alt="id"></div>
-                        <div class="col-xs-10 col-md-10"><h4><a href="#">Great Job!</a></h4>
+                        <div class="col-xs-10 col-md-10"><h4><a href="inbox.php">Great Job!</a></h4>
                             <div class="mic-info">Par: <a href="#">Nathalie Quevillon</a> le 10-04-2018 à 04:12</div>
                         </div>
                     </div>
@@ -173,58 +179,19 @@
         </div>
         
         </div>
-        
-        
-                        
- 
+
                     </div>
                 </div>
                 <!-- /.col-lg-12 -->
-            
-            
-            
-            
-            
-            
-               
 
-            
-
-            
-
-            
-            
             </div>
-            
-            
 
         </div>
         <!-- /#page-wrapper -->
 
     </div>
     <!-- /#wrapper -->
-    
-    
-    
-    
-    
 
-    <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
-
-    <!-- Morris Charts JavaScript -->
-    <script src="../vendor/raphael/raphael.min.js"></script>
-    <script src="../vendor/morrisjs/morris.min.js"></script>
-    <script src="../data/morris-data.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
 
 </body>
 

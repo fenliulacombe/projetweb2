@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
 
-<head>
-
-<?php include 'meta.php';?>
-    
-</head>
-
-<body>
-
-    <div id="wrapper">
-
-	<?php include 'nav.php';?>
 
 
 <!-- /////////////////////////////////////////////////////////// -->      
@@ -45,21 +32,6 @@
              </div>
              </div>
              <!--panel heading fin-->   
-            
-            
-            
-<!--ACCORDION-->
-<script type="text/javascript">
-  $(document).ready(function($) {
-    $('#accordion').find('.accordion-toggle').click(function(){
-
-      $(this).next().slideToggle('fast');
-
-      $(".accordion-content").not($(this).next()).slideUp('fast');
-
-    });
-  });
-</script>
      
        
  <div class="panel-body">
@@ -189,8 +161,6 @@
 </li>
   <!--MESSAGES FIN--> 
 
-
- 
   
 </ul>
 <!--************ LISTE MESSAGES FIN ************-->
@@ -256,33 +226,6 @@
                               </div><!-- /.modal-dialog -->
                           </div><!-- /.MODAL FIN -->
 
-
-
-
-
-
-
-
-
-
-
-
-    <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
-
-    <!-- Morris Charts JavaScript -->
-    <script src="../vendor/raphael/raphael.min.js"></script>
-    <script src="../vendor/morrisjs/morris.min.js"></script>
-    <script src="../data/morris-data.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
 
 </body>
 

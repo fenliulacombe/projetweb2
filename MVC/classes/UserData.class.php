@@ -26,15 +26,11 @@ class UserData extends Entite {
     private $id_secteur_ut = null;
     private $id_type_etse_ut = null;
     private $id_ville_ut = null;
-    private $titre_profil_ut = null;
     /*
      * Le constructeur de 
      */
  
-    
-    public function getProfil(){
-        return $this->titre_profil_ut;
-    }
+
 
     public function getNom(){
         return $this->nom_ut;
@@ -110,17 +106,6 @@ class UserData extends Entite {
     }
      public function getIdVille() {
         return $this->id_ville_ut;
-    }
-   
-      /**
-     * Mutateur de la propriété pseudo_ut 
-     * @return 
-     */    
-    public function setTitre_profil_ut($titre_profil_ut= null) {
-        if(empty($titre_profil_ut)){
-            $this->errorsHydrate['Titre Profil'] = "Veuillez saisir votre titre profil.";
-        }
-        $this->titre_profil_ut=trim($titre_profil_ut);
     }
     
     /**

@@ -21,7 +21,7 @@
    require ('controllers/provider.php');
 
 
-   require ('models/administratorModel.php');
+   require ('models/adminModel.php');
    require ('models/contractModel.php');
    require ('models/sectorModel.php');
    require ('models/competenceModel.php');
